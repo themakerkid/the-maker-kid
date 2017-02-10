@@ -1,0 +1,3476 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="FlaskBB is a forum software written in Flask">
+        <meta name="author" content="FlaskBB Team">
+        <meta name="csrf-token" content="1479941306##3d0a94a921dab2905db48defbc1754ab9375f7eb">
+        <link rel="shortcut icon" href="/static/favicon.ico">
+
+        <title>
+        The STEM Kid - STEM is the best!!!!
+        </title>
+
+        
+        <!-- syntax highlighting -->
+        <link rel="stylesheet" href="/static/css/pygments.css">
+        <!-- bootstrap & aurora theme -->
+        <link rel="stylesheet" href="/static/css/styles.css">
+        
+        <!-- lato font -->
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+        
+
+        
+        
+  
+        
+
+  <style>
+  /* news posts */
+  .portal-info {
+      font-size:15px;
+      color:#999999;
+      padding: 0;
+      margin-top:5px;
+      margin-bottom:10px;
+      margin-right: 0px;
+      margin-left: 0px;
+  }
+  .portal-info ul {
+      list-style-type:none;
+  }
+  .portal-info li {
+      display:inline;
+      padding-right:10px;
+  }
+
+  .portal-info a {
+      color:#999999;
+  }
+  .portal-content h1,
+  .portal-content h2,
+  .portal-content h3,
+  .portal-content h4,
+  .portal-content h5 {
+      font-weight:500;
+  }
+  .portal-content img {
+      max-width:100%;
+      max-height:100%;
+  }
+
+  /* recent topics */
+  .portal-topic:not(:first-child) {
+    padding-top: 5px;
+    clear: both;
+    border-top: 1px solid #ddd;
+  }
+
+  .portal-topic-name {
+    float: left;
+  }
+
+  .portal-topic-updated-by {
+    float: right;
+  }
+
+  .portal-topic-updated {
+    color:#999999;
+    clear: both;
+    float: right;
+  }
+
+  /* stats */
+  .portal-stats {
+    color:#999999;
+  }
+  .portal-stats:not(:first-child) {
+    padding-top: 5px;
+    clear: both;
+  }
+
+  .portal-stats-left {
+    float: left;
+  }
+
+  .portal-stats-right {
+    float: right;
+  }
+  </style>
+
+
+        
+        
+        
+    </head>
+
+    <body>
+
+        <!-- main forum layout -->
+        <div class="flaskbb-layout">
+            <div class="container">
+
+                <!-- forum header - place for the project title and subtitle -->
+                
+                <div class="flaskbb-header">
+                    <div class="flaskbb-meta">
+                        <div class="flaskbb-title">The STEM Kid</div>
+                        <div class="flaskbb-subtitle">STEM is the best!!!!</div>
+                    </div>
+                </div>
+                
+
+                <!-- forum menu - contains all the navigation items -->
+                
+                <div class="navbar navbar-default" role="navigation">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="navbar-collapse">
+                        <!-- navbar left -->
+                        <ul class="nav navbar-nav forum-nav"><li class="active">
+    <a href=/portal/>
+        <i class="fa fa-home"></i> Portal
+    </a>
+</li>
+
+                            
+<li  >
+    <a href=/>
+        <i class="fa fa-comment"></i> Forum
+    </a>
+</li>
+
+                            
+<li  >
+    <a href=/memberlist>
+        <i class="fa fa-user"></i> Memberlist
+    </a>
+</li>
+
+                            
+<li  >
+    <a href=/search>
+        <i class="fa fa-search"></i> Search
+    </a>
+</li>
+
+
+                            
+                        </ul>
+
+                        <!-- navbar right -->
+                        <ul class="nav navbar-nav navbar-right">
+
+                            
+                            <!-- Not logged in - Login/Register -->
+                            <li>
+                                <div class="btn-group navbar-btn user-btn">
+                                    <a class="btn btn-primary" href="/auth/login">
+                                        <span class="fa fa-user fa-fw"></span> Login
+                                    </a>
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        
+                                        <li><a href="/auth/register"><span class="fa fa-user-plus fa-fw"></span> Register</a></li>
+                                        
+                                        <li><a href="/auth/reset-password"><span class="fa fa-undo fa-fw"></span> Reset Password</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            
+
+                        </ul> <!-- end navbar right -->
+                    </div> <!-- end navbar-collapse -->
+                </div> <!-- end navbar -->
+                
+
+                <!-- Place for all the (flashed) messages -->
+                
+                <div id="flashed-messages">
+                    
+    
+
+                </div>
+                
+
+                <!-- the actual content block -->
+                
+<div class="row">
+
+  <!-- Left -->
+  <div class="col-md-8">
+    <div class="panel panel-default panel-widget">
+      <div class="panel-heading panel-widget-heading">
+        <h3 class="panel-title">News</h3>
+      </div>
+      <div class="panel-body panel-widget-body" style="padding-top: 0px">
+
+      
+        <h1><a href="/topic/2-arduino">Arduino</a></h1>
+        <ul class="portal-info">
+            <li><i class="fa fa-calendar"></i> Nov 22 2016</li>
+            <li><i class="fa fa-user"></i> <a href="/user/benjamin">benjamin</a></li>
+            <li><i class="fa fa-comment"></i> <a href="/topic/2-arduino">Comments (2)</a></li>
+        </ul>
+        <div class="portal-content">
+            <h3>Microcontroller.</h3>
+<p><img class='emoji' alt='star' src='/static/emoji/star.png' /> <img class='emoji' alt='star' src='/static/emoji/star.png' /> <img class='emoji' alt='star' src='/static/emoji/star.png' /> <img class='emoji' alt='star' src='/static/emoji/star.png' /> <img class='emoji' alt='star' src='/static/emoji/star.png' /></p>
+<br />
+        </div>
+        <hr>
+      
+        <h1><a href="/topic/1-welcome">Welcome!</a></h1>
+        <ul class="portal-info">
+            <li><i class="fa fa-calendar"></i> Nov 22 2016</li>
+            <li><i class="fa fa-user"></i> <a href="/user/benjamin">benjamin</a></li>
+            <li><i class="fa fa-comment"></i> <a href="/topic/1-welcome">Comments (1)</a></li>
+        </ul>
+        <div class="portal-content">
+            <p>Have fun with your new FlaskBB Forum!</p>
+<br />
+        </div>
+        
+      
+
+      </div> <!-- /.panel-body -->
+    </div>
+
+  </div>
+
+  <!-- Right -->
+  <div class="col-md-4">
+    <div class="panel panel-default panel-widget">
+      <div class="panel-heading panel-widget-heading">
+        <h3 class="panel-title">Recent Topics</h3>
+      </div>
+      <div class="panel-body panel-widget-body">
+      
+
+          <div class="portal-topic">
+            <div class="portal-topic-name">
+              <a href="/topic/3-test-user-got-it">Test User Got It</a>
+            </div>
+            <div class="portal-topic-updated-by">
+              <a href="/user/test-user">test-user</a>
+            </div>
+            <div class="portal-topic-updated">
+              1 day ago
+            </div>
+          </div> <!-- /.topic -->
+
+      
+
+          <div class="portal-topic">
+            <div class="portal-topic-name">
+              <a href="/topic/2-arduino">Arduino</a>
+            </div>
+            <div class="portal-topic-updated-by">
+              <a href="/user/benjamin">benjamin</a>
+            </div>
+            <div class="portal-topic-updated">
+              1 day ago
+            </div>
+          </div> <!-- /.topic -->
+
+      
+
+          <div class="portal-topic">
+            <div class="portal-topic-name">
+              <a href="/topic/1-welcome">Welcome!</a>
+            </div>
+            <div class="portal-topic-updated-by">
+              <a href="/user/benjamin">benjamin</a>
+            </div>
+            <div class="portal-topic-updated">
+              1 day ago
+            </div>
+          </div> <!-- /.topic -->
+
+      
+      </div>
+    </div>
+
+    <div class="panel panel-default panel-widget">
+      <div class="panel-heading panel-widget-heading">
+        <h3 class="panel-title">Statistics</h3>
+      </div>
+      <div class="panel-body panel-widget-body">
+
+            <div class="portal-stats">
+              <div class="portal-stats-left">
+                Topics
+              </div>
+              <div class="portal-stats-right">
+                3
+              </div>
+            </div>
+
+            <div class="portal-stats">
+              <div class="portal-stats-left">
+                Posts
+              </div>
+              <div class="portal-stats-right">
+                4
+              </div>
+            </div>
+
+            <div class="portal-stats">
+              <div class="portal-stats-left">
+                Registered Users
+              </div>
+              <div class="portal-stats-right">
+                2
+              </div>
+            </div>
+
+            
+            <div class="portal-stats">
+              <div class="portal-stats-left">
+                Newest User
+              </div>
+              <div class="portal-stats-right">
+                <a href="/user/test-user">test-user</a>
+              </div>
+            </div>
+            
+
+            <div class="portal-stats">
+              <div class="portal-stats-left">
+                Online Users
+              </div>
+
+              <div class="portal-stats-right">
+                0
+              </div>
+            </div>
+
+            
+      </div>
+    </div>
+  </div>
+
+</div>
+
+            </div> <!-- end container -->
+
+            <!-- the forum footer -->
+            
+            <footer class="flaskbb-footer">
+                <div class="container">
+                    <p class="text-muted pull-right">powered by <a href="https://flaskbb.org">FlaskBB</a></p>
+                    <p class="text-muted pull-left">&copy; 2013 - 2016 <a href="https://flaskbb.org">FlaskBB Team</a></p>
+                </div>
+            </footer>
+            
+
+        </div> <!-- end flaskbb-layout -->
+
+        
+        <!-- jquery and bootstrap and flaskbb.js -->
+        <script src="/static/js/scripts.min.js"></script>
+        
+
+        
+        
+        
+    <div id="flDebug" style="display:none;">
+  <script type="text/javascript">var DEBUG_TOOLBAR_STATIC_PATH = '/_debug_toolbar/static/'</script>
+  <script type="text/javascript" src="/_debug_toolbar/static/js/jquery.js"></script>
+  <script type="text/javascript" src="/_debug_toolbar/static/js/jquery.tablesorter.js"></script>
+  <script type="text/javascript" src="/_debug_toolbar/static/js/toolbar.js"></script>
+
+  <div style="display: none;" id="flDebugToolbar">
+    <ol id="flDebugPanelList">
+      
+      <li><a id="flHideToolBarButton" href="#" title="Hide Toolbar">Hide &raquo;</a></li>
+      
+
+      
+      <li id="flDebugVersionPanel">
+        
+        <a href="" title="Versions" class="flDebugVersionPanel">
+        
+
+        Versions
+        <br /><small>Flask 0.11.1</small>
+
+        
+        </a>
+        
+        
+      </li>
+      
+      <li id="flDebugTimerPanel">
+        
+        <a href="" title="Resource Usage" class="flDebugTimerPanel">
+        
+
+        Time
+        <br /><small>CPU: 712.00ms (811.24ms)</small>
+
+        
+        </a>
+        
+        
+      </li>
+      
+      <li id="flDebugHeaderPanel">
+        
+        <a href="" title="HTTP Headers" class="flDebugHeaderPanel">
+        
+
+        HTTP Headers
+        
+
+        
+        </a>
+        
+        
+      </li>
+      
+      <li id="flDebugRequestVarsPanel">
+        
+        <a href="" title="Request Vars" class="flDebugRequestVarsPanel">
+        
+
+        Request Vars
+        
+
+        
+        </a>
+        
+        
+      </li>
+      
+      <li id="flDebugConfigVarsPanel">
+        
+        <a href="" title="Config" class="flDebugConfigVarsPanel">
+        
+
+        Config
+        
+
+        
+        </a>
+        
+        
+      </li>
+      
+      <li id="flDebugTemplatePanel">
+        
+        <a href="" title="Templates" class="flDebugTemplatePanel">
+        
+
+        Templates
+        <br /><small>2 rendered</small>
+
+        
+        </a>
+        
+        
+      </li>
+      
+      <li id="flDebugSQLAlchemyPanel">
+        
+        <a href="" title="SQLAlchemy queries" class="flDebugSQLAlchemyPanel">
+        
+
+        SQLAlchemy
+        <br /><small>14 queries</small>
+
+        
+        </a>
+        
+        
+      </li>
+      
+      <li id="flDebugLoggingPanel">
+        
+        <a href="" title="Log Messages" class="flDebugLoggingPanel">
+        
+
+        Logging
+        <br /><small>47 messages</small>
+
+        
+        </a>
+        
+        
+      </li>
+      
+      <li id="flDebugRouteListPanel">
+        
+        <a href="" title="Route List" class="flDebugRouteListPanel">
+        
+
+        Route List
+        <br /><small>110 routes</small>
+
+        
+        </a>
+        
+        
+      </li>
+      
+      <li id="flDebugProfilerPanel">
+        
+        <a href="" title="Profiler not active" class="flDebugProfilerPanel">
+        
+
+        Profiler
+        <br /><small>in-active</small>
+
+        
+        </a>
+        
+        
+        <span class="switch inactive" title="Enable or disable the panel"></span>
+        
+      </li>
+      
+    </ol>
+  </div>
+  <div style="display:none;" id="flDebugToolbarHandle">
+    <a title="Show Toolbar" id="flShowToolBarButton" href="#">&laquo;</a>
+  </div>
+  
+    
+    <div id="flDebugVersionPanel-content" class="panelContent">
+      <div class="flDebugPanelTitle">
+        <a href="" class="flDebugClose">Close</a>
+        <h3>Versions</h3>
+      </div>
+      <div class="flDebugPanelContent">
+        <div class="scroll">
+          <h4>Installed Packages</h4>
+
+<p>
+  Installation paths relative to:
+</p>
+<pre>
+/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/venv/lib/python2.7/site-packages
+</pre>
+
+<table>
+  <thead>
+    <tr>
+      <th>Package</th>
+      <th>Version</th>
+      <th>Installed Path</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr class="flDebugOdd">
+        <td>alembic</td>
+        <td>0.8.8</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>amqp</td>
+        <td>1.4.9</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>anyjson</td>
+        <td>0.3.3</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>argparse</td>
+        <td>1.2.1</td>
+        <td>/usr/lib/python2.7</td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>Babel</td>
+        <td>2.3.4</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>billiard</td>
+        <td>3.3.0.23</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>blinker</td>
+        <td>1.4</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>celery</td>
+        <td>3.1.24</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>click</td>
+        <td>6.6</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>Flask</td>
+        <td>0.11.1</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>flask-allows</td>
+        <td>0.1.0</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>Flask-BabelPlus</td>
+        <td>1.0.1</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>Flask-Caching</td>
+        <td>1.0.1</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>Flask-DebugToolbar</td>
+        <td>0.10.0</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>Flask-Limiter</td>
+        <td>0.9.3</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>Flask-Login</td>
+        <td>0.3.2</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>Flask-Mail</td>
+        <td>0.9.1</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>Flask-Migrate</td>
+        <td>2.0.0</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>Flask-Plugins</td>
+        <td>1.6.1</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>Flask-Redis</td>
+        <td>0.3.0</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>Flask-Script</td>
+        <td>2.0.5</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>Flask-SQLAlchemy</td>
+        <td>2.1</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>Flask-Themes2</td>
+        <td>0.1.4</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>flask-whooshee</td>
+        <td>0.2.3</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>Flask-WTF</td>
+        <td>0.13.1</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>itsdangerous</td>
+        <td>0.24</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>Jinja2</td>
+        <td>2.8</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>kombu</td>
+        <td>3.0.37</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>limits</td>
+        <td>1.1.1</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>Mako</td>
+        <td>1.0.4</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>MarkupSafe</td>
+        <td>0.23</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>mistune</td>
+        <td>0.7.3</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>Pillow</td>
+        <td>3.4.1</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>pip</td>
+        <td>1.5.6</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>Pygments</td>
+        <td>2.1.3</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>Python</td>
+        <td>2.7</td>
+        <td>/usr/lib/python2.7/lib-dynload</td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>python-editor</td>
+        <td>1.0.1</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>pytz</td>
+        <td>2016.7</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>redis</td>
+        <td>2.10.5</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>requests</td>
+        <td>2.11.1</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>setuptools</td>
+        <td>12.2</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>simplejson</td>
+        <td>3.8.2</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>six</td>
+        <td>1.10.0</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>speaklater</td>
+        <td>1.3</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>SQLAlchemy</td>
+        <td>1.1.1</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>SQLAlchemy-Utils</td>
+        <td>0.32.9</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>Unidecode</td>
+        <td>0.4.19</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>vine</td>
+        <td>1.1.2</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>Werkzeug</td>
+        <td>0.11.11</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>Whoosh</td>
+        <td>2.7.4</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>wsgiref</td>
+        <td>0.1.2</td>
+        <td>/usr/lib/python2.7</td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>WTForms</td>
+        <td>2.1</td>
+        <td></td>
+      </tr>
+    
+  </tbody>
+</table>
+        </div>
+      </div>
+    </div>
+    
+  
+    
+    <div id="flDebugTimerPanel-content" class="panelContent">
+      <div class="flDebugPanelTitle">
+        <a href="" class="flDebugClose">Close</a>
+        <h3>Resource Usage</h3>
+      </div>
+      <div class="flDebugPanelContent">
+        <div class="scroll">
+          <table>
+  <colgroup>
+    <col style="width:20%"/>
+    <col/>
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Resource</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr class="flDebugOdd">
+        <td>User CPU time</td>
+        <td>712.000 msec</td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>System CPU time</td>
+        <td>0.000 msec</td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>Total CPU time</td>
+        <td>712.000 msec</td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>Elapsed time</td>
+        <td>811.240 msec</td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>Context switches</td>
+        <td>20407 voluntary, 3323 involuntary</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+        </div>
+      </div>
+    </div>
+    
+  
+    
+    <div id="flDebugHeaderPanel-content" class="panelContent">
+      <div class="flDebugPanelTitle">
+        <a href="" class="flDebugClose">Close</a>
+        <h3>HTTP Headers</h3>
+      </div>
+      <div class="flDebugPanelContent">
+        <div class="scroll">
+          <table>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr class="flDebugOdd">
+        <td>CONTENT_TYPE</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>HTTP_ACCEPT</td>
+        <td>text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>HTTP_ACCEPT_ENCODING</td>
+        <td>gzip, deflate</td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>HTTP_ACCEPT_LANGUAGE</td>
+        <td>en-US,en;q=0.5</td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>HTTP_CONNECTION</td>
+        <td>keep-alive</td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>HTTP_HOST</td>
+        <td>localhost:8080</td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>HTTP_REFERER</td>
+        <td>http://localhost:8080/portal/</td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>HTTP_USER_AGENT</td>
+        <td>Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:44.0) Gecko/20100101 Firefox/44.0</td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>QUERY_STRING</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>REMOTE_ADDR</td>
+        <td>127.0.0.1</td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>REQUEST_METHOD</td>
+        <td>GET</td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>SCRIPT_NAME</td>
+        <td></td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>SERVER_NAME</td>
+        <td>127.0.0.1</td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>SERVER_PORT</td>
+        <td>8080</td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>SERVER_PROTOCOL</td>
+        <td>HTTP/1.1</td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>SERVER_SOFTWARE</td>
+        <td>Werkzeug/0.11.11</td>
+      </tr>
+    
+  </tbody>
+</table>
+        </div>
+      </div>
+    </div>
+    
+  
+    
+    <div id="flDebugRequestVarsPanel-content" class="panelContent">
+      <div class="flDebugPanelTitle">
+        <a href="" class="flDebugClose">Close</a>
+        <h3>Request Vars</h3>
+      </div>
+      <div class="flDebugPanelContent">
+        <div class="scroll">
+          
+<h4>View information</h4>
+<table>
+  <thead>
+    <tr>
+      <th>View Function</th>
+      <th>args</th>
+      <th>kwargs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>flaskbb.plugins.portal.views.index</td>
+      <td>[]</td>
+      <td>
+        
+          None
+        
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+<h4>COOKIES Variables</h4>
+
+  
+<table>
+  <colgroup>
+    <col style="width:20%"/>
+    <col/>
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Variable</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="flDebugOdd">
+      <td>&#39;fldt&#39;</td>
+      <td>u&#39;hide&#39;</td>
+    </tr>
+    
+    <tr class="flDebugEven">
+      <td>&#39;session&#39;</td>
+      <td>u&#39;eyJfZnJlc2giOmZhbHNlLCJjc3JmX3Rva2VuIjp7IiBiIjoiTmprNVlXRTJPVEJoTlRjM09XTmlNR0V5WkRJMk1qTm1ObVkxTlRBMVlqZzFNVFppWldFeE13PT0ifX0.CxeNWw.xquhOQIHKL7RqncbSksxxd_B2fA&#39;</td>
+    </tr>
+    
+    <tr class="flDebugOdd">
+      <td>&#39;show_followed&#39;</td>
+      <td>u&#39;1&#39;</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+
+<h4>SESSION Variables</h4>
+
+  
+<table>
+  <colgroup>
+    <col style="width:20%"/>
+    <col/>
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Variable</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr class="flDebugOdd">
+      <td>u&#39;csrf_token&#39;</td>
+      <td>&#39;699aa690a5779cb0a2d2623f6f5505b8516bea13&#39;</td>
+    </tr>
+    
+    <tr class="flDebugEven">
+      <td>u&#39;_fresh&#39;</td>
+      <td>False</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+
+
+
+
+
+<h4>GET Variables</h4>
+
+  <p>No GET data</p>
+
+
+<h4>POST Variables</h4>
+
+  <p>No POST data</p>
+
+        </div>
+      </div>
+    </div>
+    
+  
+    
+    <div id="flDebugConfigVarsPanel-content" class="panelContent">
+      <div class="flDebugPanelTitle">
+        <a href="" class="flDebugClose">Close</a>
+        <h3>Config</h3>
+      </div>
+      <div class="flDebugPanelContent">
+        <div class="scroll">
+          <table>
+    <thead>
+        <tr>
+            <th>Key</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+            <tr class="flDebugOdd">
+                <td>ADMIN_URL_PREFIX</td>
+                <td><code>&#39;/admin&#39;</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>ADMINS</td>
+                <td><code>[&#39;your_admin_user@gmail.com&#39;]</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>APPLICATION_ROOT</td>
+                <td><code>None</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>AUTH_URL_PREFIX</td>
+                <td><code>&#39;/auth&#39;</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>BABEL_DEFAULT_LOCALE</td>
+                <td><code>&#39;en&#39;</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>BABEL_DEFAULT_TIMEZONE</td>
+                <td><code>&#39;UTC&#39;</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>BROKER_URL</td>
+                <td><code>&#39;redis://localhost:6379&#39;</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>CACHE_DEFAULT_TIMEOUT</td>
+                <td><code>60</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>CACHE_TYPE</td>
+                <td><code>&#39;simple&#39;</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>CELERY_BROKER_URL</td>
+                <td><code>&#39;redis://localhost:6379&#39;</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>CELERY_RESULT_BACKEND</td>
+                <td><code>&#39;redis://localhost:6379&#39;</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>DEBUG</td>
+                <td><code>True</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>DEBUG_TB_ENABLED</td>
+                <td><code>True</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>DEBUG_TB_HOSTS</td>
+                <td><code>()</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>DEBUG_TB_INTERCEPT_REDIRECTS</td>
+                <td><code>True</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>DEBUG_TB_PANELS</td>
+                <td><code>(&#39;flask_debugtoolbar.panels.versions.VersionDebugPanel&#39;, &#39;flask_debugtoolbar.panels.timer.TimerDebugPanel&#39;, &#39;flask_debugtoolbar.panels.headers.HeaderDebugPanel&#39;, &#39;flask_debugtoolbar.panels.request_vars.RequestVarsDebugPanel&#39;, &#39;flask_debugtoolbar.panels.config_vars.ConfigVarsDebugPanel&#39;, &#39;flask_debugtoolbar.panels.template.TemplateDebugPanel&#39;, &#39;flask_debugtoolbar.panels.sqlalchemy.SQLAlchemyDebugPanel&#39;, &#39;flask_debugtoolbar.panels.logger.LoggingPanel&#39;, &#39;flask_debugtoolbar.panels.route_list.RouteListDebugPanel&#39;, &#39;flask_debugtoolbar.panels.profiler.ProfilerDebugPanel&#39;)</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>ERROR_LOG</td>
+                <td><code>&#39;error.log&#39;</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>EXPLAIN_TEMPLATE_LOADING</td>
+                <td><code>False</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>FORUM_URL_PREFIX</td>
+                <td><code>&#39;&#39;</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>INFO_LOG</td>
+                <td><code>&#39;info.log&#39;</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>JSON_AS_ASCII</td>
+                <td><code>True</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>JSON_SORT_KEYS</td>
+                <td><code>True</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>JSONIFY_MIMETYPE</td>
+                <td><code>&#39;application/json&#39;</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>JSONIFY_PRETTYPRINT_REGULAR</td>
+                <td><code>True</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>LOGGER_HANDLER_POLICY</td>
+                <td><code>&#39;always&#39;</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>LOGGER_NAME</td>
+                <td><code>&#39;flaskbb&#39;</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>LOGIN_MESSAGE_CATEGORY</td>
+                <td><code>&#39;info&#39;</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>LOGIN_VIEW</td>
+                <td><code>&#39;auth.login&#39;</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>MAIL_DEFAULT_SENDER</td>
+                <td><code>(&#39;FlaskBB Mailer&#39;, &#39;noreply@example.org&#39;)</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>MAIL_PASSWORD</td>
+                <td><code>&#39;&#39;</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>MAIL_PORT</td>
+                <td><code>25</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>MAIL_SERVER</td>
+                <td><code>&#39;localhost&#39;</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>MAIL_USE_SSL</td>
+                <td><code>False</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>MAIL_USE_TLS</td>
+                <td><code>False</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>MAIL_USERNAME</td>
+                <td><code>&#39;&#39;</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>MAX_CONTENT_LENGTH</td>
+                <td><code>None</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>MESSAGE_URL_PREFIX</td>
+                <td><code>&#39;/message&#39;</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>PERMANENT_SESSION_LIFETIME</td>
+                <td><code>datetime.timedelta(31)</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>PREFERRED_URL_SCHEME</td>
+                <td><code>&#39;http&#39;</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>PRESERVE_CONTEXT_ON_EXCEPTION</td>
+                <td><code>None</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>PROPAGATE_EXCEPTIONS</td>
+                <td><code>None</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>RATELIMIT_ENABLED</td>
+                <td><code>True</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>RATELIMIT_HEADER_LIMIT</td>
+                <td><code>&#39;X-RateLimit-Limit&#39;</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>RATELIMIT_HEADER_REMAINING</td>
+                <td><code>&#39;X-RateLimit-Remaining&#39;</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>RATELIMIT_HEADER_RESET</td>
+                <td><code>&#39;X-RateLimit-Reset&#39;</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>RATELIMIT_HEADER_RETRY_AFTER</td>
+                <td><code>&#39;Retry-After&#39;</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>RATELIMIT_HEADERS_ENABLED</td>
+                <td><code>False</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>RATELIMIT_STORAGE_URL</td>
+                <td><code>&#39;memory://&#39;</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>RATELIMIT_STRATEGY</td>
+                <td><code>&#39;fixed-window&#39;</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>RATELIMIT_SWALLOW_ERRORS</td>
+                <td><code>False</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>REAUTH_VIEW</td>
+                <td><code>&#39;auth.reauth&#39;</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>REDIS_DATABASE</td>
+                <td><code>0</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>REDIS_ENABLED</td>
+                <td><code>False</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>REDIS_URL</td>
+                <td><code>&#39;redis://localhost:6379&#39;</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>REFRESH_MESSAGE_CATEGORY</td>
+                <td><code>&#39;info&#39;</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>REMEMBER_COOKIE_DOMAIN</td>
+                <td><code>None</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>REMEMBER_COOKIE_DURATION</td>
+                <td><code>datetime.timedelta(365)</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>REMEMBER_COOKIE_HTTPONLY</td>
+                <td><code>False</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>REMEMBER_COOKIE_NAME</td>
+                <td><code>&#39;remember_token&#39;</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>REMEMBER_COOKIE_PATH</td>
+                <td><code>&#39;/&#39;</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>REMEMBER_COOKIE_SECURE</td>
+                <td><code>None</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>SECRET_KEY</td>
+                <td><code>&#39;SecretKeyForSessionSigning&#39;</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>SEND_FILE_MAX_AGE_DEFAULT</td>
+                <td><code>datetime.timedelta(0, 43200)</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>SEND_LOGS</td>
+                <td><code>False</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>SERVER_NAME</td>
+                <td><code>None</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>SESSION_COOKIE_DOMAIN</td>
+                <td><code>None</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>SESSION_COOKIE_HTTPONLY</td>
+                <td><code>True</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>SESSION_COOKIE_NAME</td>
+                <td><code>&#39;session&#39;</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>SESSION_COOKIE_PATH</td>
+                <td><code>None</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>SESSION_COOKIE_SECURE</td>
+                <td><code>False</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>SESSION_REFRESH_EACH_REQUEST</td>
+                <td><code>True</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>SQLALCHEMY_BINDS</td>
+                <td><code>None</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>SQLALCHEMY_COMMIT_ON_TEARDOWN</td>
+                <td><code>False</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>SQLALCHEMY_DATABASE_URI</td>
+                <td><code>&#39;sqlite:////media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/flaskbb.sqlite&#39;</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>SQLALCHEMY_ECHO</td>
+                <td><code>True</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>SQLALCHEMY_MAX_OVERFLOW</td>
+                <td><code>None</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>SQLALCHEMY_NATIVE_UNICODE</td>
+                <td><code>None</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>SQLALCHEMY_POOL_RECYCLE</td>
+                <td><code>None</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>SQLALCHEMY_POOL_SIZE</td>
+                <td><code>None</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>SQLALCHEMY_POOL_TIMEOUT</td>
+                <td><code>None</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>SQLALCHEMY_RECORD_QUERIES</td>
+                <td><code>None</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>SQLALCHEMY_TRACK_MODIFICATIONS</td>
+                <td><code>False</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>TEMPLATES_AUTO_RELOAD</td>
+                <td><code>None</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>TESTING</td>
+                <td><code>False</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>TRAP_BAD_REQUEST_ERRORS</td>
+                <td><code>False</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>TRAP_HTTP_EXCEPTIONS</td>
+                <td><code>False</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>USE_X_SENDFILE</td>
+                <td><code>False</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>USER_URL_PREFIX</td>
+                <td><code>&#39;/user&#39;</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>WHOOSHEE_DIR</td>
+                <td><code>&#39;/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/whoosh_index/27&#39;</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>WHOOSHEE_MIN_STRING_LEN</td>
+                <td><code>3</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>WHOOSHEE_WRITER_TIMEOUT</td>
+                <td><code>2</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>WTF_CSRF_CHECK_DEFAULT</td>
+                <td><code>True</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>WTF_CSRF_ENABLED</td>
+                <td><code>True</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>WTF_CSRF_HEADERS</td>
+                <td><code>[&#39;X-CSRFToken&#39;, &#39;X-CSRF-Token&#39;]</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>WTF_CSRF_METHODS</td>
+                <td><code>[&#39;POST&#39;, &#39;PUT&#39;, &#39;PATCH&#39;]</code></td>
+            </tr>
+        
+            <tr class="flDebugEven">
+                <td>WTF_CSRF_SECRET_KEY</td>
+                <td><code>&#39;reallyhardtoguess&#39;</code></td>
+            </tr>
+        
+            <tr class="flDebugOdd">
+                <td>WTF_CSRF_SSL_STRICT</td>
+                <td><code>True</code></td>
+            </tr>
+        
+    </tbody>
+</table>
+        </div>
+      </div>
+    </div>
+    
+  
+    
+    <div id="flDebugTemplatePanel-content" class="panelContent">
+      <div class="flDebugPanelTitle">
+        <a href="" class="flDebugClose">Close</a>
+        <h3>Templates</h3>
+      </div>
+      <div class="flDebugPanelContent">
+        <div class="scroll">
+          
+  
+  
+    <h4>navigation_snippet.html</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Variable</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr class="flDebugOdd">
+          <td>_theme</td>
+          <td>&#39;aurora&#39;</td>
+        </tr>
+        
+        <tr class="flDebugEven">
+          <td>csrf_token</td>
+          <td>&lt;function generate_csrf at 0x7f39a8219320&gt;</td>
+        </tr>
+        
+        <tr class="flDebugOdd">
+          <td>current_user</td>
+          <td>&lt;flaskbb.user.models.Guest object at 0x7f39a64ea890&gt;</td>
+        </tr>
+        
+        <tr class="flDebugEven">
+          <td>flaskbb_config</td>
+          <td>&lt;flaskbb.utils.settings.FlaskBBConfig object at 0x7f39a755f550&gt;</td>
+        </tr>
+        
+        <tr class="flDebugOdd">
+          <td>g</td>
+          <td>&lt;flask.g of &#39;flaskbb&#39;&gt;</td>
+        </tr>
+        
+        <tr class="flDebugEven">
+          <td>request</td>
+          <td>&lt;Request &#39;http://localhost:8080/portal/&#39; [GET]&gt;</td>
+        </tr>
+        
+        <tr class="flDebugOdd">
+          <td>session</td>
+          <td>&lt;SecureCookieSession {u&#39;csrf_token&#39;: &#39;699aa690a5779cb0a2d2623f6f5505b8516bea13&#39;, u&#39;_fresh&#39;: False}&gt;</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  
+    <h4>index.html</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Variable</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr class="flDebugOdd">
+          <td>_theme</td>
+          <td>&#39;aurora&#39;</td>
+        </tr>
+        
+        <tr class="flDebugEven">
+          <td>csrf_token</td>
+          <td>&lt;function generate_csrf at 0x7f39a8219320&gt;</td>
+        </tr>
+        
+        <tr class="flDebugOdd">
+          <td>current_user</td>
+          <td>&lt;flaskbb.user.models.Guest object at 0x7f39a64ea890&gt;</td>
+        </tr>
+        
+        <tr class="flDebugEven">
+          <td>flaskbb_config</td>
+          <td>&lt;flaskbb.utils.settings.FlaskBBConfig object at 0x7f39a755f550&gt;</td>
+        </tr>
+        
+        <tr class="flDebugOdd">
+          <td>g</td>
+          <td>&lt;flask.g of &#39;flaskbb&#39;&gt;</td>
+        </tr>
+        
+        <tr class="flDebugEven">
+          <td>newest_user</td>
+          <td>&lt;User test-user&gt;</td>
+        </tr>
+        
+        <tr class="flDebugOdd">
+          <td>news</td>
+          <td>&lt;flask_sqlalchemy.Pagination object at 0x7f39a5db4950&gt;</td>
+        </tr>
+        
+        <tr class="flDebugEven">
+          <td>online_guests</td>
+          <td>None</td>
+        </tr>
+        
+        <tr class="flDebugOdd">
+          <td>online_users</td>
+          <td>0</td>
+        </tr>
+        
+        <tr class="flDebugEven">
+          <td>post_count</td>
+          <td>4</td>
+        </tr>
+        
+        <tr class="flDebugOdd">
+          <td>recent_topics</td>
+          <td>&lt;flask_whooshee.WhoosheeQuery object at 0x7f39a5dac710&gt;</td>
+        </tr>
+        
+        <tr class="flDebugEven">
+          <td>request</td>
+          <td>&lt;Request &#39;http://localhost:8080/portal/&#39; [GET]&gt;</td>
+        </tr>
+        
+        <tr class="flDebugOdd">
+          <td>session</td>
+          <td>&lt;SecureCookieSession {u&#39;csrf_token&#39;: &#39;699aa690a5779cb0a2d2623f6f5505b8516bea13&#39;, u&#39;_fresh&#39;: False}&gt;</td>
+        </tr>
+        
+        <tr class="flDebugEven">
+          <td>topic_count</td>
+          <td>3</td>
+        </tr>
+        
+        <tr class="flDebugOdd">
+          <td>user_count</td>
+          <td>2</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  
+
+        </div>
+      </div>
+    </div>
+    
+  
+    
+    <div id="flDebugSQLAlchemyPanel-content" class="panelContent">
+      <div class="flDebugPanelTitle">
+        <a href="" class="flDebugClose">Close</a>
+        <h3>SQLAlchemy queries</h3>
+      </div>
+      <div class="flDebugPanelContent">
+        <div class="scroll">
+          <table class="tablesorter">
+  <thead>
+    <tr>
+      <th>&nbsp;(ms)</th>
+      <th>Action</th>
+      <th>Context</th>
+      <th>Query</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr class="flDebugOdd">
+        <td>3.0720</td>
+        <td>
+        
+        </td>
+        <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/flaskbb/management/models.py:225 (as_dict)">
+                    ./management/models.py:225 (as_dict)
+        </td>
+        <td class="syntax">
+          <div class="flDebugSqlWrap">
+            <div class="flDebugSql"><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-weight: bold">SELECT</span> settings.<span style="color: #AA6600">&quot;key&quot;</span> <span style="color: #008800; font-weight: bold">AS</span> settings_key, settings.value <span style="color: #008800; font-weight: bold">AS</span> settings_value, settings.settingsgroup <span style="color: #008800; font-weight: bold">AS</span> settings_settingsgroup, settings.name <span style="color: #008800; font-weight: bold">AS</span> settings_name, settings.description <span style="color: #008800; font-weight: bold">AS</span> settings_description, settings.value_type <span style="color: #008800; font-weight: bold">AS</span> settings_value_type, settings.extra <span style="color: #008800; font-weight: bold">AS</span> settings_extra 
+<span style="color: #008800; font-weight: bold">FROM</span> settings
+</pre></div>
+</div>
+          </div>
+        </td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>0.8421</td>
+        <td>
+        
+        </td>
+        <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/flaskbb/user/models.py:467 (get_groups)">
+                    ./user/models.py:467 (get_groups)
+        </td>
+        <td class="syntax">
+          <div class="flDebugSqlWrap">
+            <div class="flDebugSql"><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-weight: bold">SELECT</span> groups.id <span style="color: #008800; font-weight: bold">AS</span> groups_id, groups.name <span style="color: #008800; font-weight: bold">AS</span> groups_name, groups.description <span style="color: #008800; font-weight: bold">AS</span> groups_description, groups.<span style="color: #008800; font-weight: bold">admin</span> <span style="color: #008800; font-weight: bold">AS</span> groups_admin, groups.super_mod <span style="color: #008800; font-weight: bold">AS</span> groups_super_mod, groups.<span style="color: #008800; font-weight: bold">mod</span> <span style="color: #008800; font-weight: bold">AS</span> groups_mod, groups.guest <span style="color: #008800; font-weight: bold">AS</span> groups_guest, groups.banned <span style="color: #008800; font-weight: bold">AS</span> groups_banned, groups.mod_edituser <span style="color: #008800; font-weight: bold">AS</span> groups_mod_edituser, groups.mod_banuser <span style="color: #008800; font-weight: bold">AS</span> groups_mod_banuser, groups.editpost <span style="color: #008800; font-weight: bold">AS</span> groups_editpost, groups.deletepost <span style="color: #008800; font-weight: bold">AS</span> groups_deletepost, groups.deletetopic <span style="color: #008800; font-weight: bold">AS</span> groups_deletetopic, groups.posttopic <span style="color: #008800; font-weight: bold">AS</span> groups_posttopic, groups.postreply <span style="color: #008800; font-weight: bold">AS</span> groups_postreply 
+<span style="color: #008800; font-weight: bold">FROM</span> groups 
+<span style="color: #008800; font-weight: bold">WHERE</span> groups.guest <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">1</span>
+</pre></div>
+</div>
+          </div>
+        </td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>1.8032</td>
+        <td>
+        
+          <a class="remoteCall" href="/_debug_toolbar/views/sqlalchemy/sql_select?query=.eJx1ll9vmzAUxb8K6lMjRZFyH_ZWTdWWap26RmoybVJbIQdc6i1ghE27fvuB8Z97jXn0OT_b1-Zy4PHisLvbfTlmL7Lra7URZXZ9sINclGunF0zzSnYfOQGQ6kkt9Jkjxoy9W3JVdKLVQjaIQaonW6lEhDnJM2dZ_OW4oEnwvnqV73ktS94xLTuFwMjxM_g_zbuGnRHqJFyZzgvZN5rWZsVwE7IVxQxEajgHGyabFcj1YjnBxjcdOYkZveLd0hbWW5jVsDq9lTMT84qOD_2R3s1662ycr_LtpmVKvcvO0FbLnbbOqk727YhNxbuhqdd7rkbvTnV5P-o9j5Hu8zQra0E5oyBC9e1wZUMTEcqriIwZ6lY9V5r4RkHEiTUNp0tMEt0j56XQ4-XFm3kj4odFkrjVET0uMD44gjqR3PGZaz4jgzxjzfuQgI2O6HHynPVqRHa8PX_MSKOGnhOk2wTqRtzyzg-d7iheM3HGiBGCXw4tnv-Rwj47RyE5sOOroThvMOi0QJ1Ep19L9oEppwWq4k05PVXHTEog3vlpiFJyPCuhiuQQ7_Zd8RVZLVBKVA3TfUfW8mLg2BvTjNQ0KYFopOYKA0agN5S_DBfMy6GOSsyuipj4HMMwZ1rzutWKngY7qNZCizcXXb5cJwZOv3LaIkbAFTdVzypOC500lHzkc-KzD31PPNmJmg1fW9PTOe3e2PPvA9DMBOpFmQk0M2EhMyGZmTDLTIgyE5KZCYnMhE3MUDfOTIgyE-aZCXFmwlJmQjozYSEzIZmZkMpMmGcmpDMTUpkJC5kJycyEZGZCIjMhmZkQMjN7am4e9j_sdzy7290cs_3P4-4h-76_vc8u6T9WGOXbCTBdito129_jFL4iUzb2V2Q1UsQw2-dmQvhfjYuZqsfZP66D_yCult-o2cnMPmFJNHRnm-0HaD_YhGrDB9_uZg5IreQJn5pf33YPu-xy9_v2cDxkl_affUsey7SGe6Z-EvLSq1_ff7VzZrX6SiNovJjPq9XKyGGlSb5YP35ab5-f_wOi54U3.gvc4_RUJVx3OIv9KPEw2ZmBhYOc&amp;duration=0.00180315971375">SELECT</a><br />
+          <a class="remoteCall" href="/_debug_toolbar/views/sqlalchemy/sql_explain?query=.eJx1ll9vmzAUxb8K6lMjRZFyH_ZWTdWWap26RmoybVJbIQdc6i1ghE27fvuB8Z97jXn0OT_b1-Zy4PHisLvbfTlmL7Lra7URZXZ9sINclGunF0zzSnYfOQGQ6kkt9Jkjxoy9W3JVdKLVQjaIQaonW6lEhDnJM2dZ_OW4oEnwvnqV73ktS94xLTuFwMjxM_g_zbuGnRHqJFyZzgvZN5rWZsVwE7IVxQxEajgHGyabFcj1YjnBxjcdOYkZveLd0hbWW5jVsDq9lTMT84qOD_2R3s1662ycr_LtpmVKvcvO0FbLnbbOqk727YhNxbuhqdd7rkbvTnV5P-o9j5Hu8zQra0E5oyBC9e1wZUMTEcqriIwZ6lY9V5r4RkHEiTUNp0tMEt0j56XQ4-XFm3kj4odFkrjVET0uMD44gjqR3PGZaz4jgzxjzfuQgI2O6HHynPVqRHa8PX_MSKOGnhOk2wTqRtzyzg-d7iheM3HGiBGCXw4tnv-Rwj47RyE5sOOroThvMOi0QJ1Ep19L9oEppwWq4k05PVXHTEog3vlpiFJyPCuhiuQQ7_Zd8RVZLVBKVA3TfUfW8mLg2BvTjNQ0KYFopOYKA0agN5S_DBfMy6GOSsyuipj4HMMwZ1rzutWKngY7qNZCizcXXb5cJwZOv3LaIkbAFTdVzypOC500lHzkc-KzD31PPNmJmg1fW9PTOe3e2PPvA9DMBOpFmQk0M2EhMyGZmTDLTIgyE5KZCYnMhE3MUDfOTIgyE-aZCXFmwlJmQjozYSEzIZmZkMpMmGcmpDMTUpkJC5kJycyEZGZCIjMhmZkQMjN7am4e9j_sdzy7290cs_3P4-4h-76_vc8u6T9WGOXbCTBdito129_jFL4iUzb2V2Q1UsQw2-dmQvhfjYuZqsfZP66D_yCult-o2cnMPmFJNHRnm-0HaD_YhGrDB9_uZg5IreQJn5pf33YPu-xy9_v2cDxkl_affUsey7SGe6Z-EvLSq1_ff7VzZrX6SiNovJjPq9XKyGGlSb5YP35ab5-f_wOi54U3.gvc4_RUJVx3OIv9KPEw2ZmBhYOc&amp;duration=0.00180315971375">EXPLAIN</a><br />
+        
+        </td>
+        <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/flaskbb/plugins/portal/views.py:43 (index)">
+                    ./plugins/portal/views.py:43 (index)
+        </td>
+        <td class="syntax">
+          <div class="flDebugSqlWrap">
+            <div class="flDebugSql"><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-weight: bold">SELECT</span> forums.id <span style="color: #008800; font-weight: bold">AS</span> forums_id, forums.category_id <span style="color: #008800; font-weight: bold">AS</span> forums_category_id, forums.title <span style="color: #008800; font-weight: bold">AS</span> forums_title, forums.description <span style="color: #008800; font-weight: bold">AS</span> forums_description, forums.<span style="color: #008800; font-weight: bold">position</span> <span style="color: #008800; font-weight: bold">AS</span> forums_position, forums.locked <span style="color: #008800; font-weight: bold">AS</span> forums_locked, forums.show_moderators <span style="color: #008800; font-weight: bold">AS</span> forums_show_moderators, forums.<span style="color: #008800; font-weight: bold">external</span> <span style="color: #008800; font-weight: bold">AS</span> forums_external, forums.post_count <span style="color: #008800; font-weight: bold">AS</span> forums_post_count, forums.topic_count <span style="color: #008800; font-weight: bold">AS</span> forums_topic_count, forums.last_post_id <span style="color: #008800; font-weight: bold">AS</span> forums_last_post_id, forums.last_post_title <span style="color: #008800; font-weight: bold">AS</span> forums_last_post_title, forums.last_post_user_id <span style="color: #008800; font-weight: bold">AS</span> forums_last_post_user_id, forums.last_post_username <span style="color: #008800; font-weight: bold">AS</span> forums_last_post_username, forums.last_post_created <span style="color: #008800; font-weight: bold">AS</span> forums_last_post_created, users_1.password <span style="color: #008800; font-weight: bold">AS</span> users_1_password, groups_1.id <span style="color: #008800; font-weight: bold">AS</span> groups_1_id, groups_1.name <span style="color: #008800; font-weight: bold">AS</span> groups_1_name, groups_1.description <span style="color: #008800; font-weight: bold">AS</span> groups_1_description, groups_1.<span style="color: #008800; font-weight: bold">admin</span> <span style="color: #008800; font-weight: bold">AS</span> groups_1_admin, groups_1.super_mod <span style="color: #008800; font-weight: bold">AS</span> groups_1_super_mod, groups_1.<span style="color: #008800; font-weight: bold">mod</span> <span style="color: #008800; font-weight: bold">AS</span> groups_1_mod, groups_1.guest <span style="color: #008800; font-weight: bold">AS</span> groups_1_guest, groups_1.banned <span style="color: #008800; font-weight: bold">AS</span> groups_1_banned, groups_1.mod_edituser <span style="color: #008800; font-weight: bold">AS</span> groups_1_mod_edituser, groups_1.mod_banuser <span style="color: #008800; font-weight: bold">AS</span> groups_1_mod_banuser, groups_1.editpost <span style="color: #008800; font-weight: bold">AS</span> groups_1_editpost, groups_1.deletepost <span style="color: #008800; font-weight: bold">AS</span> groups_1_deletepost, groups_1.deletetopic <span style="color: #008800; font-weight: bold">AS</span> groups_1_deletetopic, groups_1.posttopic <span style="color: #008800; font-weight: bold">AS</span> groups_1_posttopic, groups_1.postreply <span style="color: #008800; font-weight: bold">AS</span> groups_1_postreply, users_1.id <span style="color: #008800; font-weight: bold">AS</span> users_1_id, users_1.username <span style="color: #008800; font-weight: bold">AS</span> users_1_username, users_1.email <span style="color: #008800; font-weight: bold">AS</span> users_1_email, users_1.date_joined <span style="color: #008800; font-weight: bold">AS</span> users_1_date_joined, users_1.lastseen <span style="color: #008800; font-weight: bold">AS</span> users_1_lastseen, users_1.birthday <span style="color: #008800; font-weight: bold">AS</span> users_1_birthday, users_1.gender <span style="color: #008800; font-weight: bold">AS</span> users_1_gender, users_1.website <span style="color: #008800; font-weight: bold">AS</span> users_1_website, users_1.<span style="color: #008800; font-weight: bold">location</span> <span style="color: #008800; font-weight: bold">AS</span> users_1_location, users_1.signature <span style="color: #008800; font-weight: bold">AS</span> users_1_signature, users_1.avatar <span style="color: #008800; font-weight: bold">AS</span> users_1_avatar, users_1.notes <span style="color: #008800; font-weight: bold">AS</span> users_1_notes, users_1.last_failed_login <span style="color: #008800; font-weight: bold">AS</span> users_1_last_failed_login, users_1.login_attempts <span style="color: #008800; font-weight: bold">AS</span> users_1_login_attempts, users_1.activated <span style="color: #008800; font-weight: bold">AS</span> users_1_activated, users_1.theme <span style="color: #008800; font-weight: bold">AS</span> users_1_theme, users_1.<span style="color: #008800; font-weight: bold">language</span> <span style="color: #008800; font-weight: bold">AS</span> users_1_language, users_1.post_count <span style="color: #008800; font-weight: bold">AS</span> users_1_post_count, users_1.primary_group_id <span style="color: #008800; font-weight: bold">AS</span> users_1_primary_group_id, groups_2.id <span style="color: #008800; font-weight: bold">AS</span> groups_2_id, groups_2.name <span style="color: #008800; font-weight: bold">AS</span> groups_2_name, groups_2.description <span style="color: #008800; font-weight: bold">AS</span> groups_2_description, groups_2.<span style="color: #008800; font-weight: bold">admin</span> <span style="color: #008800; font-weight: bold">AS</span> groups_2_admin, groups_2.super_mod <span style="color: #008800; font-weight: bold">AS</span> groups_2_super_mod, groups_2.<span style="color: #008800; font-weight: bold">mod</span> <span style="color: #008800; font-weight: bold">AS</span> groups_2_mod, groups_2.guest <span style="color: #008800; font-weight: bold">AS</span> groups_2_guest, groups_2.banned <span style="color: #008800; font-weight: bold">AS</span> groups_2_banned, groups_2.mod_edituser <span style="color: #008800; font-weight: bold">AS</span> groups_2_mod_edituser, groups_2.mod_banuser <span style="color: #008800; font-weight: bold">AS</span> groups_2_mod_banuser, groups_2.editpost <span style="color: #008800; font-weight: bold">AS</span> groups_2_editpost, groups_2.deletepost <span style="color: #008800; font-weight: bold">AS</span> groups_2_deletepost, groups_2.deletetopic <span style="color: #008800; font-weight: bold">AS</span> groups_2_deletetopic, groups_2.posttopic <span style="color: #008800; font-weight: bold">AS</span> groups_2_posttopic, groups_2.postreply <span style="color: #008800; font-weight: bold">AS</span> groups_2_postreply 
+<span style="color: #008800; font-weight: bold">FROM</span> forums <span style="color: #008800; font-weight: bold">LEFT</span> <span style="color: #008800; font-weight: bold">OUTER</span> <span style="color: #008800; font-weight: bold">JOIN</span> (moderators <span style="color: #008800; font-weight: bold">AS</span> moderators_1 <span style="color: #008800; font-weight: bold">JOIN</span> users <span style="color: #008800; font-weight: bold">AS</span> users_1 <span style="color: #008800; font-weight: bold">ON</span> users_1.id <span style="color: #333333">=</span> moderators_1.user_id) <span style="color: #008800; font-weight: bold">ON</span> moderators_1.forum_id <span style="color: #333333">=</span> forums.id <span style="color: #008800; font-weight: bold">LEFT</span> <span style="color: #008800; font-weight: bold">OUTER</span> <span style="color: #008800; font-weight: bold">JOIN</span> groups <span style="color: #008800; font-weight: bold">AS</span> groups_1 <span style="color: #008800; font-weight: bold">ON</span> groups_1.id <span style="color: #333333">=</span> users_1.primary_group_id <span style="color: #008800; font-weight: bold">LEFT</span> <span style="color: #008800; font-weight: bold">OUTER</span> <span style="color: #008800; font-weight: bold">JOIN</span> (forumgroups <span style="color: #008800; font-weight: bold">AS</span> forumgroups_1 <span style="color: #008800; font-weight: bold">JOIN</span> groups <span style="color: #008800; font-weight: bold">AS</span> groups_2 <span style="color: #008800; font-weight: bold">ON</span> groups_2.id <span style="color: #333333">=</span> forumgroups_1.group_id) <span style="color: #008800; font-weight: bold">ON</span> forumgroups_1.forum_id <span style="color: #333333">=</span> forums.id 
+<span style="color: #008800; font-weight: bold">WHERE</span> (<span style="color: #008800; font-weight: bold">EXISTS</span> (<span style="color: #008800; font-weight: bold">SELECT</span> <span style="color: #0000DD; font-weight: bold">1</span> 
+<span style="color: #008800; font-weight: bold">FROM</span> forumgroups, groups 
+<span style="color: #008800; font-weight: bold">WHERE</span> forumgroups.forum_id <span style="color: #333333">=</span> forums.id <span style="color: #008800; font-weight: bold">AND</span> groups.id <span style="color: #333333">=</span> forumgroups.group_id <span style="color: #008800; font-weight: bold">AND</span> groups.id <span style="color: #008800; font-weight: bold">IN</span> (<span style="color: #333333">?</span>))) <span style="color: #008800; font-weight: bold">AND</span> forums.id <span style="color: #008800; font-weight: bold">IN</span> (<span style="color: #333333">?</span>)
+</pre></div>
+</div>
+          </div>
+        </td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>1.0538</td>
+        <td>
+        
+          <a class="remoteCall" href="/_debug_toolbar/views/sqlalchemy/sql_select?query=.eJxlktEKgyAUhl9FutogxnqC2MpYUAsqGKMiwhzIKsNse_25KNO60vP9H0c8mhkJDKCTAk57goYTqcElmYuS1ObCX5SNbamlC5IOJ7zBijDVMh0HzPQGM9GMrmrxRvkj6dQVxyViWCxqKxVLt6kGXo59vXFVvLoUvXVrAjInbU8Zrzqujmdh0voQ_B0UY6pl2lNxMKKj1mSF66wJE2wK9IGrXL_lXtZw3nlxFM6RqB43GMPd0_p3cLCPIIpdGIPrU_kSLkycvAOBH_opsEHkeQkUG8PMLNM6m-ei-AHMw9Oe.of4756ce3wLrXFoiw78msdueV9s&amp;duration=0.00105381011963">SELECT</a><br />
+          <a class="remoteCall" href="/_debug_toolbar/views/sqlalchemy/sql_explain?query=.eJxlktEKgyAUhl9FutogxnqC2MpYUAsqGKMiwhzIKsNse_25KNO60vP9H0c8mhkJDKCTAk57goYTqcElmYuS1ObCX5SNbamlC5IOJ7zBijDVMh0HzPQGM9GMrmrxRvkj6dQVxyViWCxqKxVLt6kGXo59vXFVvLoUvXVrAjInbU8Zrzqujmdh0voQ_B0UY6pl2lNxMKKj1mSF66wJE2wK9IGrXL_lXtZw3nlxFM6RqB43GMPd0_p3cLCPIIpdGIPrU_kSLkycvAOBH_opsEHkeQkUG8PMLNM6m-ei-AHMw9Oe.of4756ce3wLrXFoiw78msdueV9s&amp;duration=0.00105381011963">EXPLAIN</a><br />
+        
+        </td>
+        <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/flaskbb/plugins/portal/views.py:46 (index)">
+                    ./plugins/portal/views.py:46 (index)
+        </td>
+        <td class="syntax">
+          <div class="flDebugSqlWrap">
+            <div class="flDebugSql"><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-weight: bold">SELECT</span> topics.id <span style="color: #008800; font-weight: bold">AS</span> topics_id, topics.forum_id <span style="color: #008800; font-weight: bold">AS</span> topics_forum_id, topics.title <span style="color: #008800; font-weight: bold">AS</span> topics_title, topics.user_id <span style="color: #008800; font-weight: bold">AS</span> topics_user_id, topics.username <span style="color: #008800; font-weight: bold">AS</span> topics_username, topics.date_created <span style="color: #008800; font-weight: bold">AS</span> topics_date_created, topics.last_updated <span style="color: #008800; font-weight: bold">AS</span> topics_last_updated, topics.locked <span style="color: #008800; font-weight: bold">AS</span> topics_locked, topics.important <span style="color: #008800; font-weight: bold">AS</span> topics_important, topics.views <span style="color: #008800; font-weight: bold">AS</span> topics_views, topics.post_count <span style="color: #008800; font-weight: bold">AS</span> topics_post_count, topics.first_post_id <span style="color: #008800; font-weight: bold">AS</span> topics_first_post_id, topics.last_post_id <span style="color: #008800; font-weight: bold">AS</span> topics_last_post_id 
+<span style="color: #008800; font-weight: bold">FROM</span> topics 
+<span style="color: #008800; font-weight: bold">WHERE</span> topics.forum_id <span style="color: #008800; font-weight: bold">IN</span> (<span style="color: #333333">?</span>) <span style="color: #008800; font-weight: bold">ORDER</span> <span style="color: #008800; font-weight: bold">BY</span> topics.id <span style="color: #008800; font-weight: bold">DESC</span>
+ <span style="color: #008800; font-weight: bold">LIMIT</span> <span style="color: #333333">?</span> <span style="color: #008800; font-weight: bold">OFFSET</span> <span style="color: #333333">?</span>
+</pre></div>
+</div>
+          </div>
+        </td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>1.5869</td>
+        <td>
+        
+          <a class="remoteCall" href="/_debug_toolbar/views/sqlalchemy/sql_select?query=.eJx1lt1unDAQhV8F5SqRVitlLnoXVVFL1FRpVspu1UpJhLzgELcLRtgkzdsXjH9mjLn0OZ_tsRkOPJ7t87v8yyF7kf3QqK2osuu9HRSi2ji9ZJrXsv8oCIBUT2qhTxwxZuzdiquyF50WskUMUj3ZSSUizEmeOcnyL8cFzYL31at8LxpZ8Z5p2SsERo6fwf9p3rfshFAn4cp0Ucqh1bQ2K4abkJ0oFyBSwznYONmsQK4Xywk2vunIScwYFO_XtrDeyqyWNemtnJmYV_Z87I_0btbbZNN8VVxuO6bUu-wNbbXCaZus7uXQTdhcvBuaer3navTuXJf3o97zGOk-T7OqEZQzCiLU0I1XNjYRobyKyJihbj1wpYlvFEQcWdtyusQs0T0KXgk9XV68mTciflwkiVsd0dMC04MjqBPJHZ-45gsyyAvWvA8J2OiIniYvWa9GZM-708eCNGroOUG6TaBuxC3v_NDpjuINEyeMGCH41djixR8p7LNzFJIDO70aivMWg04L1FH0-rViH5hyWqBq3lbzU3XMrATinR_HKCXHsxKqSI7xbt8VX5HVAqVE3TI99GQtLwaOvTHNSE2zEohWaq4wYAR6Q8XLeMG8GuuoxeKqiInPMQ4LpjVvOq3oabCDai21eHPR5ct1YuD0K6ctYgRccVsPrOa00FlDyUc-Jz770PfEk71o2Pi1NT1d0O6NPf8-AM1MoF6UmUAzE1YyE5KZCYvMhCgzIZmZkMhM2MYMdePMhCgzYZmZEGcmrGUmpDMTVjITkpkJqcyEZWZCOjMhlZmwkpmQzExIZiYkMhOSmQkhM7On9uZh98N-x7O7_OaQ7X4e8ofs--72Pjun_1hhVFzOgOlS1K7Z7h6n8BWZsrW_IhcTRQyzfWEmhP_VuJi5epz90zr4D-Jq_Y1anMzsE5ZEQ3e2xX6A9oNtqDZ88O1u5oDUSp7wqf31LX_Is_z37f6wz87tL_sleSrzEu6R-jnISy9-ff_VzlmU6guNoOlePl9cnG0ePz0__wcH1n54.sY0vKkDbsGHUQmurO1ClmWzt104&amp;duration=0.0015869140625">SELECT</a><br />
+          <a class="remoteCall" href="/_debug_toolbar/views/sqlalchemy/sql_explain?query=.eJx1lt1unDAQhV8F5SqRVitlLnoXVVFL1FRpVspu1UpJhLzgELcLRtgkzdsXjH9mjLn0OZ_tsRkOPJ7t87v8yyF7kf3QqK2osuu9HRSi2ji9ZJrXsv8oCIBUT2qhTxwxZuzdiquyF50WskUMUj3ZSSUizEmeOcnyL8cFzYL31at8LxpZ8Z5p2SsERo6fwf9p3rfshFAn4cp0Ucqh1bQ2K4abkJ0oFyBSwznYONmsQK4Xywk2vunIScwYFO_XtrDeyqyWNemtnJmYV_Z87I_0btbbZNN8VVxuO6bUu-wNbbXCaZus7uXQTdhcvBuaer3navTuXJf3o97zGOk-T7OqEZQzCiLU0I1XNjYRobyKyJihbj1wpYlvFEQcWdtyusQs0T0KXgk9XV68mTciflwkiVsd0dMC04MjqBPJHZ-45gsyyAvWvA8J2OiIniYvWa9GZM-708eCNGroOUG6TaBuxC3v_NDpjuINEyeMGCH41djixR8p7LNzFJIDO70aivMWg04L1FH0-rViH5hyWqBq3lbzU3XMrATinR_HKCXHsxKqSI7xbt8VX5HVAqVE3TI99GQtLwaOvTHNSE2zEohWaq4wYAR6Q8XLeMG8GuuoxeKqiInPMQ4LpjVvOq3oabCDai21eHPR5ct1YuD0K6ctYgRccVsPrOa00FlDyUc-Jz770PfEk71o2Pi1NT1d0O6NPf8-AM1MoF6UmUAzE1YyE5KZCYvMhCgzIZmZkMhM2MYMdePMhCgzYZmZEGcmrGUmpDMTVjITkpkJqcyEZWZCOjMhlZmwkpmQzExIZiYkMhOSmQkhM7On9uZh98N-x7O7_OaQ7X4e8ofs--72Pjun_1hhVFzOgOlS1K7Z7h6n8BWZsrW_IhcTRQyzfWEmhP_VuJi5epz90zr4D-Jq_Y1anMzsE5ZEQ3e2xX6A9oNtqDZ88O1u5oDUSp7wqf31LX_Is_z37f6wz87tL_sleSrzEu6R-jnISy9-ff_VzlmU6guNoOlePl9cnG0ePz0__wcH1n54.sY0vKkDbsGHUQmurO1ClmWzt104&amp;duration=0.0015869140625">EXPLAIN</a><br />
+        
+        </td>
+        <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/flaskbb/plugins/portal/views.py:50 (index)">
+                    ./plugins/portal/views.py:50 (index)
+        </td>
+        <td class="syntax">
+          <div class="flDebugSqlWrap">
+            <div class="flDebugSql"><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-weight: bold">SELECT</span> forums.id <span style="color: #008800; font-weight: bold">AS</span> forums_id, forums.category_id <span style="color: #008800; font-weight: bold">AS</span> forums_category_id, forums.title <span style="color: #008800; font-weight: bold">AS</span> forums_title, forums.description <span style="color: #008800; font-weight: bold">AS</span> forums_description, forums.<span style="color: #008800; font-weight: bold">position</span> <span style="color: #008800; font-weight: bold">AS</span> forums_position, forums.locked <span style="color: #008800; font-weight: bold">AS</span> forums_locked, forums.show_moderators <span style="color: #008800; font-weight: bold">AS</span> forums_show_moderators, forums.<span style="color: #008800; font-weight: bold">external</span> <span style="color: #008800; font-weight: bold">AS</span> forums_external, forums.post_count <span style="color: #008800; font-weight: bold">AS</span> forums_post_count, forums.topic_count <span style="color: #008800; font-weight: bold">AS</span> forums_topic_count, forums.last_post_id <span style="color: #008800; font-weight: bold">AS</span> forums_last_post_id, forums.last_post_title <span style="color: #008800; font-weight: bold">AS</span> forums_last_post_title, forums.last_post_user_id <span style="color: #008800; font-weight: bold">AS</span> forums_last_post_user_id, forums.last_post_username <span style="color: #008800; font-weight: bold">AS</span> forums_last_post_username, forums.last_post_created <span style="color: #008800; font-weight: bold">AS</span> forums_last_post_created, users_1.password <span style="color: #008800; font-weight: bold">AS</span> users_1_password, groups_1.id <span style="color: #008800; font-weight: bold">AS</span> groups_1_id, groups_1.name <span style="color: #008800; font-weight: bold">AS</span> groups_1_name, groups_1.description <span style="color: #008800; font-weight: bold">AS</span> groups_1_description, groups_1.<span style="color: #008800; font-weight: bold">admin</span> <span style="color: #008800; font-weight: bold">AS</span> groups_1_admin, groups_1.super_mod <span style="color: #008800; font-weight: bold">AS</span> groups_1_super_mod, groups_1.<span style="color: #008800; font-weight: bold">mod</span> <span style="color: #008800; font-weight: bold">AS</span> groups_1_mod, groups_1.guest <span style="color: #008800; font-weight: bold">AS</span> groups_1_guest, groups_1.banned <span style="color: #008800; font-weight: bold">AS</span> groups_1_banned, groups_1.mod_edituser <span style="color: #008800; font-weight: bold">AS</span> groups_1_mod_edituser, groups_1.mod_banuser <span style="color: #008800; font-weight: bold">AS</span> groups_1_mod_banuser, groups_1.editpost <span style="color: #008800; font-weight: bold">AS</span> groups_1_editpost, groups_1.deletepost <span style="color: #008800; font-weight: bold">AS</span> groups_1_deletepost, groups_1.deletetopic <span style="color: #008800; font-weight: bold">AS</span> groups_1_deletetopic, groups_1.posttopic <span style="color: #008800; font-weight: bold">AS</span> groups_1_posttopic, groups_1.postreply <span style="color: #008800; font-weight: bold">AS</span> groups_1_postreply, users_1.id <span style="color: #008800; font-weight: bold">AS</span> users_1_id, users_1.username <span style="color: #008800; font-weight: bold">AS</span> users_1_username, users_1.email <span style="color: #008800; font-weight: bold">AS</span> users_1_email, users_1.date_joined <span style="color: #008800; font-weight: bold">AS</span> users_1_date_joined, users_1.lastseen <span style="color: #008800; font-weight: bold">AS</span> users_1_lastseen, users_1.birthday <span style="color: #008800; font-weight: bold">AS</span> users_1_birthday, users_1.gender <span style="color: #008800; font-weight: bold">AS</span> users_1_gender, users_1.website <span style="color: #008800; font-weight: bold">AS</span> users_1_website, users_1.<span style="color: #008800; font-weight: bold">location</span> <span style="color: #008800; font-weight: bold">AS</span> users_1_location, users_1.signature <span style="color: #008800; font-weight: bold">AS</span> users_1_signature, users_1.avatar <span style="color: #008800; font-weight: bold">AS</span> users_1_avatar, users_1.notes <span style="color: #008800; font-weight: bold">AS</span> users_1_notes, users_1.last_failed_login <span style="color: #008800; font-weight: bold">AS</span> users_1_last_failed_login, users_1.login_attempts <span style="color: #008800; font-weight: bold">AS</span> users_1_login_attempts, users_1.activated <span style="color: #008800; font-weight: bold">AS</span> users_1_activated, users_1.theme <span style="color: #008800; font-weight: bold">AS</span> users_1_theme, users_1.<span style="color: #008800; font-weight: bold">language</span> <span style="color: #008800; font-weight: bold">AS</span> users_1_language, users_1.post_count <span style="color: #008800; font-weight: bold">AS</span> users_1_post_count, users_1.primary_group_id <span style="color: #008800; font-weight: bold">AS</span> users_1_primary_group_id, groups_2.id <span style="color: #008800; font-weight: bold">AS</span> groups_2_id, groups_2.name <span style="color: #008800; font-weight: bold">AS</span> groups_2_name, groups_2.description <span style="color: #008800; font-weight: bold">AS</span> groups_2_description, groups_2.<span style="color: #008800; font-weight: bold">admin</span> <span style="color: #008800; font-weight: bold">AS</span> groups_2_admin, groups_2.super_mod <span style="color: #008800; font-weight: bold">AS</span> groups_2_super_mod, groups_2.<span style="color: #008800; font-weight: bold">mod</span> <span style="color: #008800; font-weight: bold">AS</span> groups_2_mod, groups_2.guest <span style="color: #008800; font-weight: bold">AS</span> groups_2_guest, groups_2.banned <span style="color: #008800; font-weight: bold">AS</span> groups_2_banned, groups_2.mod_edituser <span style="color: #008800; font-weight: bold">AS</span> groups_2_mod_edituser, groups_2.mod_banuser <span style="color: #008800; font-weight: bold">AS</span> groups_2_mod_banuser, groups_2.editpost <span style="color: #008800; font-weight: bold">AS</span> groups_2_editpost, groups_2.deletepost <span style="color: #008800; font-weight: bold">AS</span> groups_2_deletepost, groups_2.deletetopic <span style="color: #008800; font-weight: bold">AS</span> groups_2_deletetopic, groups_2.posttopic <span style="color: #008800; font-weight: bold">AS</span> groups_2_posttopic, groups_2.postreply <span style="color: #008800; font-weight: bold">AS</span> groups_2_postreply 
+<span style="color: #008800; font-weight: bold">FROM</span> forums <span style="color: #008800; font-weight: bold">LEFT</span> <span style="color: #008800; font-weight: bold">OUTER</span> <span style="color: #008800; font-weight: bold">JOIN</span> (moderators <span style="color: #008800; font-weight: bold">AS</span> moderators_1 <span style="color: #008800; font-weight: bold">JOIN</span> users <span style="color: #008800; font-weight: bold">AS</span> users_1 <span style="color: #008800; font-weight: bold">ON</span> users_1.id <span style="color: #333333">=</span> moderators_1.user_id) <span style="color: #008800; font-weight: bold">ON</span> moderators_1.forum_id <span style="color: #333333">=</span> forums.id <span style="color: #008800; font-weight: bold">LEFT</span> <span style="color: #008800; font-weight: bold">OUTER</span> <span style="color: #008800; font-weight: bold">JOIN</span> groups <span style="color: #008800; font-weight: bold">AS</span> groups_1 <span style="color: #008800; font-weight: bold">ON</span> groups_1.id <span style="color: #333333">=</span> users_1.primary_group_id <span style="color: #008800; font-weight: bold">LEFT</span> <span style="color: #008800; font-weight: bold">OUTER</span> <span style="color: #008800; font-weight: bold">JOIN</span> (forumgroups <span style="color: #008800; font-weight: bold">AS</span> forumgroups_1 <span style="color: #008800; font-weight: bold">JOIN</span> groups <span style="color: #008800; font-weight: bold">AS</span> groups_2 <span style="color: #008800; font-weight: bold">ON</span> groups_2.id <span style="color: #333333">=</span> forumgroups_1.group_id) <span style="color: #008800; font-weight: bold">ON</span> forumgroups_1.forum_id <span style="color: #333333">=</span> forums.id 
+<span style="color: #008800; font-weight: bold">WHERE</span> <span style="color: #008800; font-weight: bold">EXISTS</span> (<span style="color: #008800; font-weight: bold">SELECT</span> <span style="color: #0000DD; font-weight: bold">1</span> 
+<span style="color: #008800; font-weight: bold">FROM</span> forumgroups, groups 
+<span style="color: #008800; font-weight: bold">WHERE</span> forumgroups.forum_id <span style="color: #333333">=</span> forums.id <span style="color: #008800; font-weight: bold">AND</span> groups.id <span style="color: #333333">=</span> forumgroups.group_id <span style="color: #008800; font-weight: bold">AND</span> groups.id <span style="color: #008800; font-weight: bold">IN</span> (<span style="color: #333333">?</span>))
+</pre></div>
+</div>
+          </div>
+        </td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>1.1129</td>
+        <td>
+        
+        </td>
+        <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/flaskbb/plugins/portal/views.py:55 (index)">
+                    ./plugins/portal/views.py:55 (index)
+        </td>
+        <td class="syntax">
+          <div class="flDebugSqlWrap">
+            <div class="flDebugSql"><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-weight: bold">SELECT</span> <span style="color: #008800; font-weight: bold">count</span>(<span style="color: #333333">*</span>) <span style="color: #008800; font-weight: bold">AS</span> count_1 
+<span style="color: #008800; font-weight: bold">FROM</span> (<span style="color: #008800; font-weight: bold">SELECT</span> users.password <span style="color: #008800; font-weight: bold">AS</span> users_password, users.id <span style="color: #008800; font-weight: bold">AS</span> users_id, users.username <span style="color: #008800; font-weight: bold">AS</span> users_username, users.email <span style="color: #008800; font-weight: bold">AS</span> users_email, users.date_joined <span style="color: #008800; font-weight: bold">AS</span> users_date_joined, users.lastseen <span style="color: #008800; font-weight: bold">AS</span> users_lastseen, users.birthday <span style="color: #008800; font-weight: bold">AS</span> users_birthday, users.gender <span style="color: #008800; font-weight: bold">AS</span> users_gender, users.website <span style="color: #008800; font-weight: bold">AS</span> users_website, users.<span style="color: #008800; font-weight: bold">location</span> <span style="color: #008800; font-weight: bold">AS</span> users_location, users.signature <span style="color: #008800; font-weight: bold">AS</span> users_signature, users.avatar <span style="color: #008800; font-weight: bold">AS</span> users_avatar, users.notes <span style="color: #008800; font-weight: bold">AS</span> users_notes, users.last_failed_login <span style="color: #008800; font-weight: bold">AS</span> users_last_failed_login, users.login_attempts <span style="color: #008800; font-weight: bold">AS</span> users_login_attempts, users.activated <span style="color: #008800; font-weight: bold">AS</span> users_activated, users.theme <span style="color: #008800; font-weight: bold">AS</span> users_theme, users.<span style="color: #008800; font-weight: bold">language</span> <span style="color: #008800; font-weight: bold">AS</span> users_language, users.post_count <span style="color: #008800; font-weight: bold">AS</span> users_post_count, users.primary_group_id <span style="color: #008800; font-weight: bold">AS</span> users_primary_group_id 
+<span style="color: #008800; font-weight: bold">FROM</span> users) <span style="color: #008800; font-weight: bold">AS</span> anon_1
+</pre></div>
+</div>
+          </div>
+        </td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>0.8290</td>
+        <td>
+        
+        </td>
+        <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/flaskbb/plugins/portal/views.py:56 (index)">
+                    ./plugins/portal/views.py:56 (index)
+        </td>
+        <td class="syntax">
+          <div class="flDebugSqlWrap">
+            <div class="flDebugSql"><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-weight: bold">SELECT</span> <span style="color: #008800; font-weight: bold">count</span>(<span style="color: #333333">*</span>) <span style="color: #008800; font-weight: bold">AS</span> count_1 
+<span style="color: #008800; font-weight: bold">FROM</span> (<span style="color: #008800; font-weight: bold">SELECT</span> topics.id <span style="color: #008800; font-weight: bold">AS</span> topics_id, topics.forum_id <span style="color: #008800; font-weight: bold">AS</span> topics_forum_id, topics.title <span style="color: #008800; font-weight: bold">AS</span> topics_title, topics.user_id <span style="color: #008800; font-weight: bold">AS</span> topics_user_id, topics.username <span style="color: #008800; font-weight: bold">AS</span> topics_username, topics.date_created <span style="color: #008800; font-weight: bold">AS</span> topics_date_created, topics.last_updated <span style="color: #008800; font-weight: bold">AS</span> topics_last_updated, topics.locked <span style="color: #008800; font-weight: bold">AS</span> topics_locked, topics.important <span style="color: #008800; font-weight: bold">AS</span> topics_important, topics.views <span style="color: #008800; font-weight: bold">AS</span> topics_views, topics.post_count <span style="color: #008800; font-weight: bold">AS</span> topics_post_count, topics.first_post_id <span style="color: #008800; font-weight: bold">AS</span> topics_first_post_id, topics.last_post_id <span style="color: #008800; font-weight: bold">AS</span> topics_last_post_id 
+<span style="color: #008800; font-weight: bold">FROM</span> topics) <span style="color: #008800; font-weight: bold">AS</span> anon_1
+</pre></div>
+</div>
+          </div>
+        </td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>0.8080</td>
+        <td>
+        
+        </td>
+        <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/flaskbb/plugins/portal/views.py:57 (index)">
+                    ./plugins/portal/views.py:57 (index)
+        </td>
+        <td class="syntax">
+          <div class="flDebugSqlWrap">
+            <div class="flDebugSql"><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-weight: bold">SELECT</span> <span style="color: #008800; font-weight: bold">count</span>(<span style="color: #333333">*</span>) <span style="color: #008800; font-weight: bold">AS</span> count_1 
+<span style="color: #008800; font-weight: bold">FROM</span> (<span style="color: #008800; font-weight: bold">SELECT</span> posts.id <span style="color: #008800; font-weight: bold">AS</span> posts_id, posts.topic_id <span style="color: #008800; font-weight: bold">AS</span> posts_topic_id, posts.user_id <span style="color: #008800; font-weight: bold">AS</span> posts_user_id, posts.username <span style="color: #008800; font-weight: bold">AS</span> posts_username, posts.content <span style="color: #008800; font-weight: bold">AS</span> posts_content, posts.date_created <span style="color: #008800; font-weight: bold">AS</span> posts_date_created, posts.date_modified <span style="color: #008800; font-weight: bold">AS</span> posts_date_modified, posts.modified_by <span style="color: #008800; font-weight: bold">AS</span> posts_modified_by 
+<span style="color: #008800; font-weight: bold">FROM</span> posts) <span style="color: #008800; font-weight: bold">AS</span> anon_1
+</pre></div>
+</div>
+          </div>
+        </td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>1.2200</td>
+        <td>
+        
+          <a class="remoteCall" href="/_debug_toolbar/views/sqlalchemy/sql_select?query=.eJx1lNtOwzAMhl8l4npC8AAIceikoUGlbVwgQFHWmhK0JlXigvb29OTE6eBmqr__a-Il3l7Pttk6u9uJ1oPz543y_se6UtxsRyKJLCZDs0wH2n8aVUPMiJABtdKHGA8lZaVCkF9WG2CLM0jeQXn0ACZKRMjYa4efpTpGgwgZFZgSXMzHmtIf2HuN7GtMIHRgC4Xa8g4mQobXlVHYOrZGQOSob4WK9TDWlBqL4GM4lPwE5Ed3dFB2O1d6dhRJFHvuCqkQoW7Q8845D70VqLt2-E0ERA5-Ar_qoYwdmqpVFfDGRkJGY7tGC9saZFMWWLCcrpU7ysrZtpF86ubJQgxPXl5Ow0llmtF4hnSczpCX4AunG7rdoDHObFXWOvUGwgzfNuBkbdOWAmXm3EnTqgWPST4QZuyVmX45QRlRuoeEUmN_hPPNQjDzu0X-1CfO7H6B_goTlWByxgdAODEjPnHRNrr4Qx44s_uXT91AZ6aD5nA8MUf6Zpab_HGcNbHOljuRP--yjXjIV0-Tz98U-VMyf1f_zW--ue9WuX2J_6P32fbuzYj16nG1E9ciXy63Wfdwtni9XFy8v_8CeLkO-Q.KwfisRgG_eJ4vlykQlOWAFb5xYs&amp;duration=0.00121998786926">SELECT</a><br />
+          <a class="remoteCall" href="/_debug_toolbar/views/sqlalchemy/sql_explain?query=.eJx1lNtOwzAMhl8l4npC8AAIceikoUGlbVwgQFHWmhK0JlXigvb29OTE6eBmqr__a-Il3l7Pttk6u9uJ1oPz543y_se6UtxsRyKJLCZDs0wH2n8aVUPMiJABtdKHGA8lZaVCkF9WG2CLM0jeQXn0ACZKRMjYa4efpTpGgwgZFZgSXMzHmtIf2HuN7GtMIHRgC4Xa8g4mQobXlVHYOrZGQOSob4WK9TDWlBqL4GM4lPwE5Ed3dFB2O1d6dhRJFHvuCqkQoW7Q8845D70VqLt2-E0ERA5-Ar_qoYwdmqpVFfDGRkJGY7tGC9saZFMWWLCcrpU7ysrZtpF86ubJQgxPXl5Ow0llmtF4hnSczpCX4AunG7rdoDHObFXWOvUGwgzfNuBkbdOWAmXm3EnTqgWPST4QZuyVmX45QRlRuoeEUmN_hPPNQjDzu0X-1CfO7H6B_goTlWByxgdAODEjPnHRNrr4Qx44s_uXT91AZ6aD5nA8MUf6Zpab_HGcNbHOljuRP--yjXjIV0-Tz98U-VMyf1f_zW--ue9WuX2J_6P32fbuzYj16nG1E9ciXy63Wfdwtni9XFy8v_8CeLkO-Q.KwfisRgG_eJ4vlykQlOWAFb5xYs&amp;duration=0.00121998786926">EXPLAIN</a><br />
+        
+        </td>
+        <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/flaskbb/plugins/portal/views.py:58 (index)">
+                    ./plugins/portal/views.py:58 (index)
+        </td>
+        <td class="syntax">
+          <div class="flDebugSqlWrap">
+            <div class="flDebugSql"><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-weight: bold">SELECT</span> users.password <span style="color: #008800; font-weight: bold">AS</span> users_password, users.id <span style="color: #008800; font-weight: bold">AS</span> users_id, users.username <span style="color: #008800; font-weight: bold">AS</span> users_username, users.email <span style="color: #008800; font-weight: bold">AS</span> users_email, users.date_joined <span style="color: #008800; font-weight: bold">AS</span> users_date_joined, users.lastseen <span style="color: #008800; font-weight: bold">AS</span> users_lastseen, users.birthday <span style="color: #008800; font-weight: bold">AS</span> users_birthday, users.gender <span style="color: #008800; font-weight: bold">AS</span> users_gender, users.website <span style="color: #008800; font-weight: bold">AS</span> users_website, users.<span style="color: #008800; font-weight: bold">location</span> <span style="color: #008800; font-weight: bold">AS</span> users_location, users.signature <span style="color: #008800; font-weight: bold">AS</span> users_signature, users.avatar <span style="color: #008800; font-weight: bold">AS</span> users_avatar, users.notes <span style="color: #008800; font-weight: bold">AS</span> users_notes, users.last_failed_login <span style="color: #008800; font-weight: bold">AS</span> users_last_failed_login, users.login_attempts <span style="color: #008800; font-weight: bold">AS</span> users_login_attempts, users.activated <span style="color: #008800; font-weight: bold">AS</span> users_activated, users.theme <span style="color: #008800; font-weight: bold">AS</span> users_theme, users.<span style="color: #008800; font-weight: bold">language</span> <span style="color: #008800; font-weight: bold">AS</span> users_language, users.post_count <span style="color: #008800; font-weight: bold">AS</span> users_post_count, users.primary_group_id <span style="color: #008800; font-weight: bold">AS</span> users_primary_group_id, groups_1.id <span style="color: #008800; font-weight: bold">AS</span> groups_1_id, groups_1.name <span style="color: #008800; font-weight: bold">AS</span> groups_1_name, groups_1.description <span style="color: #008800; font-weight: bold">AS</span> groups_1_description, groups_1.<span style="color: #008800; font-weight: bold">admin</span> <span style="color: #008800; font-weight: bold">AS</span> groups_1_admin, groups_1.super_mod <span style="color: #008800; font-weight: bold">AS</span> groups_1_super_mod, groups_1.<span style="color: #008800; font-weight: bold">mod</span> <span style="color: #008800; font-weight: bold">AS</span> groups_1_mod, groups_1.guest <span style="color: #008800; font-weight: bold">AS</span> groups_1_guest, groups_1.banned <span style="color: #008800; font-weight: bold">AS</span> groups_1_banned, groups_1.mod_edituser <span style="color: #008800; font-weight: bold">AS</span> groups_1_mod_edituser, groups_1.mod_banuser <span style="color: #008800; font-weight: bold">AS</span> groups_1_mod_banuser, groups_1.editpost <span style="color: #008800; font-weight: bold">AS</span> groups_1_editpost, groups_1.deletepost <span style="color: #008800; font-weight: bold">AS</span> groups_1_deletepost, groups_1.deletetopic <span style="color: #008800; font-weight: bold">AS</span> groups_1_deletetopic, groups_1.posttopic <span style="color: #008800; font-weight: bold">AS</span> groups_1_posttopic, groups_1.postreply <span style="color: #008800; font-weight: bold">AS</span> groups_1_postreply 
+<span style="color: #008800; font-weight: bold">FROM</span> users <span style="color: #008800; font-weight: bold">LEFT</span> <span style="color: #008800; font-weight: bold">OUTER</span> <span style="color: #008800; font-weight: bold">JOIN</span> groups <span style="color: #008800; font-weight: bold">AS</span> groups_1 <span style="color: #008800; font-weight: bold">ON</span> groups_1.id <span style="color: #333333">=</span> users.primary_group_id <span style="color: #008800; font-weight: bold">ORDER</span> <span style="color: #008800; font-weight: bold">BY</span> users.id <span style="color: #008800; font-weight: bold">DESC</span>
+ <span style="color: #008800; font-weight: bold">LIMIT</span> <span style="color: #333333">?</span> <span style="color: #008800; font-weight: bold">OFFSET</span> <span style="color: #333333">?</span>
+</pre></div>
+</div>
+          </div>
+        </td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>0.8960</td>
+        <td>
+        
+          <a class="remoteCall" href="/_debug_toolbar/views/sqlalchemy/sql_select?query=.eJxlklFLwzAUhf9K6dOUbdhubjBQEan4oAib4MMc4W69dpE1KUnq2L-3S3ubq76Unu8c0tObu45X2XP28BbtdK3c4PIiul-17yKJPtTj8vUlGnSR2qKx4wqsPWqTn4OeCCLDLiGZJ3t6fiooMXhEKIElyEOwvSQvB4fiS0uF7HAGKXcA6yyiCiEilNhK4_Y5nEKCCCUKVDma4Lea3CNurXTsNzrQN9A7cFLzBh2hhJWFAlcbdkaPKAPf4IB1aDW5Sju0wfSST0B8NqPDvPlyIf-M4pcVOjdCgHNYVs7y5pz33XZONnX4TfSIMm6P_Kq9DA1VUUOBvFhLKFHppqjfQrZlPetTRpZgTqIwuq4E37p_TrfJ3m3E-1O2zP5uzO1NdOfXH5RWIomH6zi9SmajJBmlkyhNFpPJIp2N5_Pp9DqJN5sf5MgrkQ.4xQ0FUjBfSI92pqjO9fH8oznpYQ&amp;duration=0.000895977020264">SELECT</a><br />
+          <a class="remoteCall" href="/_debug_toolbar/views/sqlalchemy/sql_explain?query=.eJxlklFLwzAUhf9K6dOUbdhubjBQEan4oAib4MMc4W69dpE1KUnq2L-3S3ubq76Unu8c0tObu45X2XP28BbtdK3c4PIiul-17yKJPtTj8vUlGnSR2qKx4wqsPWqTn4OeCCLDLiGZJ3t6fiooMXhEKIElyEOwvSQvB4fiS0uF7HAGKXcA6yyiCiEilNhK4_Y5nEKCCCUKVDma4Lea3CNurXTsNzrQN9A7cFLzBh2hhJWFAlcbdkaPKAPf4IB1aDW5Sju0wfSST0B8NqPDvPlyIf-M4pcVOjdCgHNYVs7y5pz33XZONnX4TfSIMm6P_Kq9DA1VUUOBvFhLKFHppqjfQrZlPetTRpZgTqIwuq4E37p_TrfJ3m3E-1O2zP5uzO1NdOfXH5RWIomH6zi9SmajJBmlkyhNFpPJIp2N5_Pp9DqJN5sf5MgrkQ.4xQ0FUjBfSI92pqjO9fH8oznpYQ&amp;duration=0.000895977020264">EXPLAIN</a><br />
+        
+        </td>
+        <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/flaskbb/plugins/portal/views.py:62 (index)">
+                    ./plugins/portal/views.py:62 (index)
+        </td>
+        <td class="syntax">
+          <div class="flDebugSqlWrap">
+            <div class="flDebugSql"><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-weight: bold">SELECT</span> <span style="color: #008800; font-weight: bold">count</span>(<span style="color: #333333">*</span>) <span style="color: #008800; font-weight: bold">AS</span> count_1 
+<span style="color: #008800; font-weight: bold">FROM</span> (<span style="color: #008800; font-weight: bold">SELECT</span> users.password <span style="color: #008800; font-weight: bold">AS</span> users_password, users.id <span style="color: #008800; font-weight: bold">AS</span> users_id, users.username <span style="color: #008800; font-weight: bold">AS</span> users_username, users.email <span style="color: #008800; font-weight: bold">AS</span> users_email, users.date_joined <span style="color: #008800; font-weight: bold">AS</span> users_date_joined, users.lastseen <span style="color: #008800; font-weight: bold">AS</span> users_lastseen, users.birthday <span style="color: #008800; font-weight: bold">AS</span> users_birthday, users.gender <span style="color: #008800; font-weight: bold">AS</span> users_gender, users.website <span style="color: #008800; font-weight: bold">AS</span> users_website, users.<span style="color: #008800; font-weight: bold">location</span> <span style="color: #008800; font-weight: bold">AS</span> users_location, users.signature <span style="color: #008800; font-weight: bold">AS</span> users_signature, users.avatar <span style="color: #008800; font-weight: bold">AS</span> users_avatar, users.notes <span style="color: #008800; font-weight: bold">AS</span> users_notes, users.last_failed_login <span style="color: #008800; font-weight: bold">AS</span> users_last_failed_login, users.login_attempts <span style="color: #008800; font-weight: bold">AS</span> users_login_attempts, users.activated <span style="color: #008800; font-weight: bold">AS</span> users_activated, users.theme <span style="color: #008800; font-weight: bold">AS</span> users_theme, users.<span style="color: #008800; font-weight: bold">language</span> <span style="color: #008800; font-weight: bold">AS</span> users_language, users.post_count <span style="color: #008800; font-weight: bold">AS</span> users_post_count, users.primary_group_id <span style="color: #008800; font-weight: bold">AS</span> users_primary_group_id 
+<span style="color: #008800; font-weight: bold">FROM</span> users 
+<span style="color: #008800; font-weight: bold">WHERE</span> users.lastseen <span style="color: #333333">&gt;=</span> <span style="color: #333333">?</span>) <span style="color: #008800; font-weight: bold">AS</span> anon_1
+</pre></div>
+</div>
+          </div>
+        </td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>3.9389</td>
+        <td>
+        
+          <a class="remoteCall" href="/_debug_toolbar/views/sqlalchemy/sql_select?query=.eJx1lG9rwjAQh79K8bUM_AAyxqhsY1NQx16ohNjeaoZNSnKd-O3Xf5dcqnsj3vN7mpzJ2d1kk76nz9ukdmDdQyWduxibJ0-bnggi08FQLFOetp9alhAyImRAKdU5xF1JWS4RxI9RGtjiDJJ3lg4dgA4SETKOyuIpl9dgECGjAJ2DDXlfU3qBo1PIfsYAfAcmk6gM72AgZDhVaIm1ZWt4RI78lShZD31NqTYILoRdyU9AfDdHB3mzc6FGRxFFoeemEBIRygod75xz31uGqmmH34RH5OAJ-FV3ZehQF7UsgDfWEzIq0zSamVojmzLPvGVVKe1VFNbUleBTN06mSffNidkwnFTGGY2nT_vp9HkOLrOqotv1GuPMlnmpYq8jzHB1BVaUJm7JU2aOnTgtanAY5R1hxlHq4Z_jlR7FewjIFbZHON7MByO_WeSuPnBmtwu0VxipBKMzPgPCjRnwjYumUtkduePMbh--dT0dmRaq8_XG7OleL9arj37Wkvd0sU1Wn9t0nbytXpeDz59MVsto_ub_ze9ef72k6zS8RufJ42S6mx0Of2S8CRo.7uNbRgmntGshiAgixbfyNTzE9Mo&amp;duration=0.00393891334534">SELECT</a><br />
+          <a class="remoteCall" href="/_debug_toolbar/views/sqlalchemy/sql_explain?query=.eJx1lG9rwjAQh79K8bUM_AAyxqhsY1NQx16ohNjeaoZNSnKd-O3Xf5dcqnsj3vN7mpzJ2d1kk76nz9ukdmDdQyWduxibJ0-bnggi08FQLFOetp9alhAyImRAKdU5xF1JWS4RxI9RGtjiDJJ3lg4dgA4SETKOyuIpl9dgECGjAJ2DDXlfU3qBo1PIfsYAfAcmk6gM72AgZDhVaIm1ZWt4RI78lShZD31NqTYILoRdyU9AfDdHB3mzc6FGRxFFoeemEBIRygod75xz31uGqmmH34RH5OAJ-FV3ZehQF7UsgDfWEzIq0zSamVojmzLPvGVVKe1VFNbUleBTN06mSffNidkwnFTGGY2nT_vp9HkOLrOqotv1GuPMlnmpYq8jzHB1BVaUJm7JU2aOnTgtanAY5R1hxlHq4Z_jlR7FewjIFbZHON7MByO_WeSuPnBmtwu0VxipBKMzPgPCjRnwjYumUtkduePMbh--dT0dmRaq8_XG7OleL9arj37Wkvd0sU1Wn9t0nbytXpeDz59MVsto_ub_ze9ef72k6zS8RufJ42S6mx0Of2S8CRo.7uNbRgmntGshiAgixbfyNTzE9Mo&amp;duration=0.00393891334534">EXPLAIN</a><br />
+        
+        </td>
+        <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/flaskbb/utils/helpers.py:71 (render_template)">
+                    ./utils/helpers.py:71 (render_template)
+        </td>
+        <td class="syntax">
+          <div class="flDebugSqlWrap">
+            <div class="flDebugSql"><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-weight: bold">SELECT</span> users.password <span style="color: #008800; font-weight: bold">AS</span> users_password, users.id <span style="color: #008800; font-weight: bold">AS</span> users_id, users.username <span style="color: #008800; font-weight: bold">AS</span> users_username, users.email <span style="color: #008800; font-weight: bold">AS</span> users_email, users.date_joined <span style="color: #008800; font-weight: bold">AS</span> users_date_joined, users.lastseen <span style="color: #008800; font-weight: bold">AS</span> users_lastseen, users.birthday <span style="color: #008800; font-weight: bold">AS</span> users_birthday, users.gender <span style="color: #008800; font-weight: bold">AS</span> users_gender, users.website <span style="color: #008800; font-weight: bold">AS</span> users_website, users.<span style="color: #008800; font-weight: bold">location</span> <span style="color: #008800; font-weight: bold">AS</span> users_location, users.signature <span style="color: #008800; font-weight: bold">AS</span> users_signature, users.avatar <span style="color: #008800; font-weight: bold">AS</span> users_avatar, users.notes <span style="color: #008800; font-weight: bold">AS</span> users_notes, users.last_failed_login <span style="color: #008800; font-weight: bold">AS</span> users_last_failed_login, users.login_attempts <span style="color: #008800; font-weight: bold">AS</span> users_login_attempts, users.activated <span style="color: #008800; font-weight: bold">AS</span> users_activated, users.theme <span style="color: #008800; font-weight: bold">AS</span> users_theme, users.<span style="color: #008800; font-weight: bold">language</span> <span style="color: #008800; font-weight: bold">AS</span> users_language, users.post_count <span style="color: #008800; font-weight: bold">AS</span> users_post_count, users.primary_group_id <span style="color: #008800; font-weight: bold">AS</span> users_primary_group_id, groups_1.id <span style="color: #008800; font-weight: bold">AS</span> groups_1_id, groups_1.name <span style="color: #008800; font-weight: bold">AS</span> groups_1_name, groups_1.description <span style="color: #008800; font-weight: bold">AS</span> groups_1_description, groups_1.<span style="color: #008800; font-weight: bold">admin</span> <span style="color: #008800; font-weight: bold">AS</span> groups_1_admin, groups_1.super_mod <span style="color: #008800; font-weight: bold">AS</span> groups_1_super_mod, groups_1.<span style="color: #008800; font-weight: bold">mod</span> <span style="color: #008800; font-weight: bold">AS</span> groups_1_mod, groups_1.guest <span style="color: #008800; font-weight: bold">AS</span> groups_1_guest, groups_1.banned <span style="color: #008800; font-weight: bold">AS</span> groups_1_banned, groups_1.mod_edituser <span style="color: #008800; font-weight: bold">AS</span> groups_1_mod_edituser, groups_1.mod_banuser <span style="color: #008800; font-weight: bold">AS</span> groups_1_mod_banuser, groups_1.editpost <span style="color: #008800; font-weight: bold">AS</span> groups_1_editpost, groups_1.deletepost <span style="color: #008800; font-weight: bold">AS</span> groups_1_deletepost, groups_1.deletetopic <span style="color: #008800; font-weight: bold">AS</span> groups_1_deletetopic, groups_1.posttopic <span style="color: #008800; font-weight: bold">AS</span> groups_1_posttopic, groups_1.postreply <span style="color: #008800; font-weight: bold">AS</span> groups_1_postreply 
+<span style="color: #008800; font-weight: bold">FROM</span> users <span style="color: #008800; font-weight: bold">LEFT</span> <span style="color: #008800; font-weight: bold">OUTER</span> <span style="color: #008800; font-weight: bold">JOIN</span> groups <span style="color: #008800; font-weight: bold">AS</span> groups_1 <span style="color: #008800; font-weight: bold">ON</span> groups_1.id <span style="color: #333333">=</span> users.primary_group_id 
+<span style="color: #008800; font-weight: bold">WHERE</span> users.id <span style="color: #333333">=</span> <span style="color: #333333">?</span>
+</pre></div>
+</div>
+          </div>
+        </td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>1.8170</td>
+        <td>
+        
+          <a class="remoteCall" href="/_debug_toolbar/views/sqlalchemy/sql_select?query=.eJyLVgp29XF1DlEoyC8uKdbLTFFwDIaw4zNTdKCiJfkFmcnxyHIwEZiK0uLUIhQFUAFk-bzE3FRUBSARmIrk_LyS1LwShAKoAEw-JbEkNT65KBVIIVmDLIqiMjc_JTMtE0MpTBimFsaPT6pEqEQWjMlzC_L3hUgAOeEerkGuiLCyVbBX0ok2io0FAPT_d2M.sRK0MX7b8PHHZIrOVdfm-3vzpdg&amp;duration=0.00181698799133">SELECT</a><br />
+          <a class="remoteCall" href="/_debug_toolbar/views/sqlalchemy/sql_explain?query=.eJyLVgp29XF1DlEoyC8uKdbLTFFwDIaw4zNTdKCiJfkFmcnxyHIwEZiK0uLUIhQFUAFk-bzE3FRUBSARmIrk_LyS1LwShAKoAEw-JbEkNT65KBVIIVmDLIqiMjc_JTMtE0MpTBimFsaPT6pEqEQWjMlzC_L3hUgAOeEerkGuiLCyVbBX0ok2io0FAPT_d2M.sRK0MX7b8PHHZIrOVdfm-3vzpdg&amp;duration=0.00181698799133">EXPLAIN</a><br />
+        
+        </td>
+        <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/flaskbb/utils/helpers.py:71 (render_template)">
+                    ./utils/helpers.py:71 (render_template)
+        </td>
+        <td class="syntax">
+          <div class="flDebugSqlWrap">
+            <div class="flDebugSql"><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-weight: bold">SELECT</span> posts.id <span style="color: #008800; font-weight: bold">AS</span> posts_id, posts.topic_id <span style="color: #008800; font-weight: bold">AS</span> posts_topic_id, posts.user_id <span style="color: #008800; font-weight: bold">AS</span> posts_user_id, posts.username <span style="color: #008800; font-weight: bold">AS</span> posts_username, posts.content <span style="color: #008800; font-weight: bold">AS</span> posts_content, posts.date_created <span style="color: #008800; font-weight: bold">AS</span> posts_date_created, posts.date_modified <span style="color: #008800; font-weight: bold">AS</span> posts_date_modified, posts.modified_by <span style="color: #008800; font-weight: bold">AS</span> posts_modified_by 
+<span style="color: #008800; font-weight: bold">FROM</span> posts 
+<span style="color: #008800; font-weight: bold">WHERE</span> posts.id <span style="color: #333333">=</span> <span style="color: #333333">?</span>
+</pre></div>
+</div>
+          </div>
+        </td>
+      </tr>
+    
+      <tr class="flDebugOdd">
+        <td>1.3649</td>
+        <td>
+        
+          <a class="remoteCall" href="/_debug_toolbar/views/sqlalchemy/sql_select?query=.eJyLVgp29XF1DlEoyC8uKdbLTFFwDIaw4zNTdKCiJfkFmcnxyHIwEZiK0uLUIhQFUAFk-bzE3FRUBSARmIrk_LyS1LwShAKoAEw-JbEkNT65KBVIIVmDLIqiMjc_JTMtE0MpTBimFsaPT6pEqEQWjMlzC_L3hUgAOeEerkGuiLCyVbBX0ok2jI0FAPT8d2I.1eeFeqM_1hRJjOXZs1_KLO3AKl0&amp;duration=0.00136494636536">SELECT</a><br />
+          <a class="remoteCall" href="/_debug_toolbar/views/sqlalchemy/sql_explain?query=.eJyLVgp29XF1DlEoyC8uKdbLTFFwDIaw4zNTdKCiJfkFmcnxyHIwEZiK0uLUIhQFUAFk-bzE3FRUBSARmIrk_LyS1LwShAKoAEw-JbEkNT65KBVIIVmDLIqiMjc_JTMtE0MpTBimFsaPT6pEqEQWjMlzC_L3hUgAOeEerkGuiLCyVbBX0ok2jI0FAPT8d2I.1eeFeqM_1hRJjOXZs1_KLO3AKl0&amp;duration=0.00136494636536">EXPLAIN</a><br />
+        
+        </td>
+        <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/flaskbb/utils/helpers.py:71 (render_template)">
+                    ./utils/helpers.py:71 (render_template)
+        </td>
+        <td class="syntax">
+          <div class="flDebugSqlWrap">
+            <div class="flDebugSql"><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-weight: bold">SELECT</span> posts.id <span style="color: #008800; font-weight: bold">AS</span> posts_id, posts.topic_id <span style="color: #008800; font-weight: bold">AS</span> posts_topic_id, posts.user_id <span style="color: #008800; font-weight: bold">AS</span> posts_user_id, posts.username <span style="color: #008800; font-weight: bold">AS</span> posts_username, posts.content <span style="color: #008800; font-weight: bold">AS</span> posts_content, posts.date_created <span style="color: #008800; font-weight: bold">AS</span> posts_date_created, posts.date_modified <span style="color: #008800; font-weight: bold">AS</span> posts_date_modified, posts.modified_by <span style="color: #008800; font-weight: bold">AS</span> posts_modified_by 
+<span style="color: #008800; font-weight: bold">FROM</span> posts 
+<span style="color: #008800; font-weight: bold">WHERE</span> posts.id <span style="color: #333333">=</span> <span style="color: #333333">?</span>
+</pre></div>
+</div>
+          </div>
+        </td>
+      </tr>
+    
+      <tr class="flDebugEven">
+        <td>2.9941</td>
+        <td>
+        
+          <a class="remoteCall" href="/_debug_toolbar/views/sqlalchemy/sql_select?query=.eJxtke0KgjAUhm_l4K-CEVkXIH1MEjRBg4gKEV0wUidz1u23ROdmwWA7z_twxs6uVox9vDuBYDXNmgXNYRP3RUJzNPAH422ZGOmAlCOoKIgmdLVK24Zws0FPDKNKSzJRvkg5eSpIknEiN72VjpVbpI1I2jqfuDoeXZY9TasDKqdlzbhIK6GPZ2DKelHybjSjq1VaM3lxxlqjyQjHWVMuWReYA9e5-cpf2cC3yo3CoI9kdT7gCP98rXeEmYPgu-YQRnscwfbyd5h7HO9uFfhe4J3AgdB1YywPFrraaIXWyF6i5f3-Aa2u2Z4.epWpFOltA-2s1MvdK_ehlFRsoZ4&amp;duration=0.00299406051636">SELECT</a><br />
+          <a class="remoteCall" href="/_debug_toolbar/views/sqlalchemy/sql_explain?query=.eJxtke0KgjAUhm_l4K-CEVkXIH1MEjRBg4gKEV0wUidz1u23ROdmwWA7z_twxs6uVox9vDuBYDXNmgXNYRP3RUJzNPAH422ZGOmAlCOoKIgmdLVK24Zws0FPDKNKSzJRvkg5eSpIknEiN72VjpVbpI1I2jqfuDoeXZY9TasDKqdlzbhIK6GPZ2DKelHybjSjq1VaM3lxxlqjyQjHWVMuWReYA9e5-cpf2cC3yo3CoI9kdT7gCP98rXeEmYPgu-YQRnscwfbyd5h7HO9uFfhe4J3AgdB1YywPFrraaIXWyF6i5f3-Aa2u2Z4.epWpFOltA-2s1MvdK_ehlFRsoZ4&amp;duration=0.00299406051636">EXPLAIN</a><br />
+        
+        </td>
+        <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/flaskbb/utils/helpers.py:71 (render_template)">
+                    ./utils/helpers.py:71 (render_template)
+        </td>
+        <td class="syntax">
+          <div class="flDebugSqlWrap">
+            <div class="flDebugSql"><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-weight: bold">SELECT</span> topics.id <span style="color: #008800; font-weight: bold">AS</span> topics_id, topics.forum_id <span style="color: #008800; font-weight: bold">AS</span> topics_forum_id, topics.title <span style="color: #008800; font-weight: bold">AS</span> topics_title, topics.user_id <span style="color: #008800; font-weight: bold">AS</span> topics_user_id, topics.username <span style="color: #008800; font-weight: bold">AS</span> topics_username, topics.date_created <span style="color: #008800; font-weight: bold">AS</span> topics_date_created, topics.last_updated <span style="color: #008800; font-weight: bold">AS</span> topics_last_updated, topics.locked <span style="color: #008800; font-weight: bold">AS</span> topics_locked, topics.important <span style="color: #008800; font-weight: bold">AS</span> topics_important, topics.views <span style="color: #008800; font-weight: bold">AS</span> topics_views, topics.post_count <span style="color: #008800; font-weight: bold">AS</span> topics_post_count, topics.first_post_id <span style="color: #008800; font-weight: bold">AS</span> topics_first_post_id, topics.last_post_id <span style="color: #008800; font-weight: bold">AS</span> topics_last_post_id 
+<span style="color: #008800; font-weight: bold">FROM</span> topics 
+<span style="color: #008800; font-weight: bold">WHERE</span> topics.forum_id <span style="color: #008800; font-weight: bold">IN</span> (<span style="color: #333333">?</span>, <span style="color: #333333">?</span>, <span style="color: #333333">?</span>) <span style="color: #008800; font-weight: bold">ORDER</span> <span style="color: #008800; font-weight: bold">BY</span> topics.last_updated <span style="color: #008800; font-weight: bold">DESC</span>
+ <span style="color: #008800; font-weight: bold">LIMIT</span> <span style="color: #333333">?</span> <span style="color: #008800; font-weight: bold">OFFSET</span> <span style="color: #333333">?</span>
+</pre></div>
+</div>
+          </div>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+        </div>
+      </div>
+    </div>
+    
+  
+    
+    <div id="flDebugLoggingPanel-content" class="panelContent">
+      <div class="flDebugPanelTitle">
+        <a href="" class="flDebugClose">Close</a>
+        <h3>Log Messages</h3>
+      </div>
+      <div class="flDebugPanelContent">
+        <div class="scroll">
+          
+  <table>
+    <thead>
+      <tr>
+        <th>Level</th>
+        <th>Time</th>
+        <th>Message</th>
+        <th>Location</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr class="flDebugOdd">
+          <td>INFO</td>
+          <td>2016-11-23 21:48:26.669398</td>
+          <td>SELECT CAST(&#39;test plain returns&#39; AS VARCHAR(60)) AS anon_1</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/venv/local/lib/python2.7/site-packages/sqlalchemy/log.py:109">&lt;sqlalchemy/log.py&gt;:109</td>
+        </tr>
+      
+        <tr class="flDebugEven">
+          <td>INFO</td>
+          <td>2016-11-23 21:48:26.669639</td>
+          <td>()</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/venv/local/lib/python2.7/site-packages/sqlalchemy/log.py:109">&lt;sqlalchemy/log.py&gt;:109</td>
+        </tr>
+      
+        <tr class="flDebugOdd">
+          <td>INFO</td>
+          <td>2016-11-23 21:48:26.670566</td>
+          <td>SELECT CAST(&#39;test unicode returns&#39; AS VARCHAR(60)) AS anon_1</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/venv/local/lib/python2.7/site-packages/sqlalchemy/log.py:109">&lt;sqlalchemy/log.py&gt;:109</td>
+        </tr>
+      
+        <tr class="flDebugEven">
+          <td>INFO</td>
+          <td>2016-11-23 21:48:26.670723</td>
+          <td>()</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/venv/local/lib/python2.7/site-packages/sqlalchemy/log.py:109">&lt;sqlalchemy/log.py&gt;:109</td>
+        </tr>
+      
+        <tr class="flDebugOdd">
+          <td>INFO</td>
+          <td>2016-11-23 21:48:26.671571</td>
+          <td>BEGIN (implicit)</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/venv/local/lib/python2.7/site-packages/sqlalchemy/log.py:109">&lt;sqlalchemy/log.py&gt;:109</td>
+        </tr>
+      
+        <tr class="flDebugEven">
+          <td>INFO</td>
+          <td>2016-11-23 21:48:26.672318</td>
+          <td>SELECT settings.&#34;key&#34; AS settings_key, settings.value AS settings_value, settings.settingsgroup AS settings_settingsgroup, settings.name AS settings_name, settings.description AS settings_description, settings.value_type AS settings_value_type, settings.extra AS settings_extra 
+FROM settings</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/venv/local/lib/python2.7/site-packages/sqlalchemy/log.py:109">&lt;sqlalchemy/log.py&gt;:109</td>
+        </tr>
+      
+        <tr class="flDebugOdd">
+          <td>INFO</td>
+          <td>2016-11-23 21:48:26.672476</td>
+          <td>()</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/venv/local/lib/python2.7/site-packages/sqlalchemy/log.py:109">&lt;sqlalchemy/log.py&gt;:109</td>
+        </tr>
+      
+        <tr class="flDebugEven">
+          <td>DEBUG</td>
+          <td>2016-11-23 21:48:26.675055</td>
+          <td>Total Time: 0.002721</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/flaskbb/app.py:328">./app.py:328</td>
+        </tr>
+      
+        <tr class="flDebugOdd">
+          <td>INFO</td>
+          <td>2016-11-23 21:48:26.679662</td>
+          <td>SELECT groups.id AS groups_id, groups.name AS groups_name, groups.description AS groups_description, groups.admin AS groups_admin, groups.super_mod AS groups_super_mod, groups.mod AS groups_mod, groups.guest AS groups_guest, groups.banned AS groups_banned, groups.mod_edituser AS groups_mod_edituser, groups.mod_banuser AS groups_mod_banuser, groups.editpost AS groups_editpost, groups.deletepost AS groups_deletepost, groups.deletetopic AS groups_deletetopic, groups.posttopic AS groups_posttopic, groups.postreply AS groups_postreply 
+FROM groups 
+WHERE groups.guest = 1</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/venv/local/lib/python2.7/site-packages/sqlalchemy/log.py:109">&lt;sqlalchemy/log.py&gt;:109</td>
+        </tr>
+      
+        <tr class="flDebugEven">
+          <td>INFO</td>
+          <td>2016-11-23 21:48:26.679869</td>
+          <td>()</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/venv/local/lib/python2.7/site-packages/sqlalchemy/log.py:109">&lt;sqlalchemy/log.py&gt;:109</td>
+        </tr>
+      
+        <tr class="flDebugOdd">
+          <td>DEBUG</td>
+          <td>2016-11-23 21:48:26.680367</td>
+          <td>Total Time: 0.000710</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/flaskbb/app.py:328">./app.py:328</td>
+        </tr>
+      
+        <tr class="flDebugEven">
+          <td>INFO</td>
+          <td>2016-11-23 21:48:26.703811</td>
+          <td>SELECT forums.id AS forums_id, forums.category_id AS forums_category_id, forums.title AS forums_title, forums.description AS forums_description, forums.position AS forums_position, forums.locked AS forums_locked, forums.show_moderators AS forums_show_moderators, forums.external AS forums_external, forums.post_count AS forums_post_count, forums.topic_count AS forums_topic_count, forums.last_post_id AS forums_last_post_id, forums.last_post_title AS forums_last_post_title, forums.last_post_user_id AS forums_last_post_user_id, forums.last_post_username AS forums_last_post_username, forums.last_post_created AS forums_last_post_created, users_1.password AS users_1_password, groups_1.id AS groups_1_id, groups_1.name AS groups_1_name, groups_1.description AS groups_1_description, groups_1.admin AS groups_1_admin, groups_1.super_mod AS groups_1_super_mod, groups_1.mod AS groups_1_mod, groups_1.guest AS groups_1_guest, groups_1.banned AS groups_1_banned, groups_1.mod_edituser AS groups_1_mod_edituser, groups_1.mod_banuser AS groups_1_mod_banuser, groups_1.editpost AS groups_1_editpost, groups_1.deletepost AS groups_1_deletepost, groups_1.deletetopic AS groups_1_deletetopic, groups_1.posttopic AS groups_1_posttopic, groups_1.postreply AS groups_1_postreply, users_1.id AS users_1_id, users_1.username AS users_1_username, users_1.email AS users_1_email, users_1.date_joined AS users_1_date_joined, users_1.lastseen AS users_1_lastseen, users_1.birthday AS users_1_birthday, users_1.gender AS users_1_gender, users_1.website AS users_1_website, users_1.location AS users_1_location, users_1.signature AS users_1_signature, users_1.avatar AS users_1_avatar, users_1.notes AS users_1_notes, users_1.last_failed_login AS users_1_last_failed_login, users_1.login_attempts AS users_1_login_attempts, users_1.activated AS users_1_activated, users_1.theme AS users_1_theme, users_1.language AS users_1_language, users_1.post_count AS users_1_post_count, users_1.primary_group_id AS users_1_primary_group_id, groups_2.id AS groups_2_id, groups_2.name AS groups_2_name, groups_2.description AS groups_2_description, groups_2.admin AS groups_2_admin, groups_2.super_mod AS groups_2_super_mod, groups_2.mod AS groups_2_mod, groups_2.guest AS groups_2_guest, groups_2.banned AS groups_2_banned, groups_2.mod_edituser AS groups_2_mod_edituser, groups_2.mod_banuser AS groups_2_mod_banuser, groups_2.editpost AS groups_2_editpost, groups_2.deletepost AS groups_2_deletepost, groups_2.deletetopic AS groups_2_deletetopic, groups_2.posttopic AS groups_2_posttopic, groups_2.postreply AS groups_2_postreply 
+FROM forums LEFT OUTER JOIN (moderators AS moderators_1 JOIN users AS users_1 ON users_1.id = moderators_1.user_id) ON moderators_1.forum_id = forums.id LEFT OUTER JOIN groups AS groups_1 ON groups_1.id = users_1.primary_group_id LEFT OUTER JOIN (forumgroups AS forumgroups_1 JOIN groups AS groups_2 ON groups_2.id = forumgroups_1.group_id) ON forumgroups_1.forum_id = forums.id 
+WHERE (EXISTS (SELECT 1 
+FROM forumgroups, groups 
+WHERE forumgroups.forum_id = forums.id AND groups.id = forumgroups.group_id AND groups.id IN (?))) AND forums.id IN (?)</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/venv/local/lib/python2.7/site-packages/sqlalchemy/log.py:109">&lt;sqlalchemy/log.py&gt;:109</td>
+        </tr>
+      
+        <tr class="flDebugOdd">
+          <td>INFO</td>
+          <td>2016-11-23 21:48:26.704169</td>
+          <td>(6, 1)</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/venv/local/lib/python2.7/site-packages/sqlalchemy/log.py:109">&lt;sqlalchemy/log.py&gt;:109</td>
+        </tr>
+      
+        <tr class="flDebugEven">
+          <td>DEBUG</td>
+          <td>2016-11-23 21:48:26.705419</td>
+          <td>Total Time: 0.001609</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/flaskbb/app.py:328">./app.py:328</td>
+        </tr>
+      
+        <tr class="flDebugOdd">
+          <td>INFO</td>
+          <td>2016-11-23 21:48:26.714152</td>
+          <td>SELECT topics.id AS topics_id, topics.forum_id AS topics_forum_id, topics.title AS topics_title, topics.user_id AS topics_user_id, topics.username AS topics_username, topics.date_created AS topics_date_created, topics.last_updated AS topics_last_updated, topics.locked AS topics_locked, topics.important AS topics_important, topics.views AS topics_views, topics.post_count AS topics_post_count, topics.first_post_id AS topics_first_post_id, topics.last_post_id AS topics_last_post_id 
+FROM topics 
+WHERE topics.forum_id IN (?) ORDER BY topics.id DESC
+ LIMIT ? OFFSET ?</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/venv/local/lib/python2.7/site-packages/sqlalchemy/log.py:109">&lt;sqlalchemy/log.py&gt;:109</td>
+        </tr>
+      
+        <tr class="flDebugEven">
+          <td>INFO</td>
+          <td>2016-11-23 21:48:26.714396</td>
+          <td>(1, 10, 0)</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/venv/local/lib/python2.7/site-packages/sqlalchemy/log.py:109">&lt;sqlalchemy/log.py&gt;:109</td>
+        </tr>
+      
+        <tr class="flDebugOdd">
+          <td>DEBUG</td>
+          <td>2016-11-23 21:48:26.715038</td>
+          <td>Total Time: 0.000894</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/flaskbb/app.py:328">./app.py:328</td>
+        </tr>
+      
+        <tr class="flDebugEven">
+          <td>INFO</td>
+          <td>2016-11-23 21:48:26.732619</td>
+          <td>SELECT forums.id AS forums_id, forums.category_id AS forums_category_id, forums.title AS forums_title, forums.description AS forums_description, forums.position AS forums_position, forums.locked AS forums_locked, forums.show_moderators AS forums_show_moderators, forums.external AS forums_external, forums.post_count AS forums_post_count, forums.topic_count AS forums_topic_count, forums.last_post_id AS forums_last_post_id, forums.last_post_title AS forums_last_post_title, forums.last_post_user_id AS forums_last_post_user_id, forums.last_post_username AS forums_last_post_username, forums.last_post_created AS forums_last_post_created, users_1.password AS users_1_password, groups_1.id AS groups_1_id, groups_1.name AS groups_1_name, groups_1.description AS groups_1_description, groups_1.admin AS groups_1_admin, groups_1.super_mod AS groups_1_super_mod, groups_1.mod AS groups_1_mod, groups_1.guest AS groups_1_guest, groups_1.banned AS groups_1_banned, groups_1.mod_edituser AS groups_1_mod_edituser, groups_1.mod_banuser AS groups_1_mod_banuser, groups_1.editpost AS groups_1_editpost, groups_1.deletepost AS groups_1_deletepost, groups_1.deletetopic AS groups_1_deletetopic, groups_1.posttopic AS groups_1_posttopic, groups_1.postreply AS groups_1_postreply, users_1.id AS users_1_id, users_1.username AS users_1_username, users_1.email AS users_1_email, users_1.date_joined AS users_1_date_joined, users_1.lastseen AS users_1_lastseen, users_1.birthday AS users_1_birthday, users_1.gender AS users_1_gender, users_1.website AS users_1_website, users_1.location AS users_1_location, users_1.signature AS users_1_signature, users_1.avatar AS users_1_avatar, users_1.notes AS users_1_notes, users_1.last_failed_login AS users_1_last_failed_login, users_1.login_attempts AS users_1_login_attempts, users_1.activated AS users_1_activated, users_1.theme AS users_1_theme, users_1.language AS users_1_language, users_1.post_count AS users_1_post_count, users_1.primary_group_id AS users_1_primary_group_id, groups_2.id AS groups_2_id, groups_2.name AS groups_2_name, groups_2.description AS groups_2_description, groups_2.admin AS groups_2_admin, groups_2.super_mod AS groups_2_super_mod, groups_2.mod AS groups_2_mod, groups_2.guest AS groups_2_guest, groups_2.banned AS groups_2_banned, groups_2.mod_edituser AS groups_2_mod_edituser, groups_2.mod_banuser AS groups_2_mod_banuser, groups_2.editpost AS groups_2_editpost, groups_2.deletepost AS groups_2_deletepost, groups_2.deletetopic AS groups_2_deletetopic, groups_2.posttopic AS groups_2_posttopic, groups_2.postreply AS groups_2_postreply 
+FROM forums LEFT OUTER JOIN (moderators AS moderators_1 JOIN users AS users_1 ON users_1.id = moderators_1.user_id) ON moderators_1.forum_id = forums.id LEFT OUTER JOIN groups AS groups_1 ON groups_1.id = users_1.primary_group_id LEFT OUTER JOIN (forumgroups AS forumgroups_1 JOIN groups AS groups_2 ON groups_2.id = forumgroups_1.group_id) ON forumgroups_1.forum_id = forums.id 
+WHERE EXISTS (SELECT 1 
+FROM forumgroups, groups 
+WHERE forumgroups.forum_id = forums.id AND groups.id = forumgroups.group_id AND groups.id IN (?))</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/venv/local/lib/python2.7/site-packages/sqlalchemy/log.py:109">&lt;sqlalchemy/log.py&gt;:109</td>
+        </tr>
+      
+        <tr class="flDebugOdd">
+          <td>INFO</td>
+          <td>2016-11-23 21:48:26.732887</td>
+          <td>(6,)</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/venv/local/lib/python2.7/site-packages/sqlalchemy/log.py:109">&lt;sqlalchemy/log.py&gt;:109</td>
+        </tr>
+      
+        <tr class="flDebugEven">
+          <td>DEBUG</td>
+          <td>2016-11-23 21:48:26.734047</td>
+          <td>Total Time: 0.001432</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/flaskbb/app.py:328">./app.py:328</td>
+        </tr>
+      
+        <tr class="flDebugOdd">
+          <td>INFO</td>
+          <td>2016-11-23 21:48:26.747285</td>
+          <td>SELECT count(*) AS count_1 
+FROM (SELECT users.password AS users_password, users.id AS users_id, users.username AS users_username, users.email AS users_email, users.date_joined AS users_date_joined, users.lastseen AS users_lastseen, users.birthday AS users_birthday, users.gender AS users_gender, users.website AS users_website, users.location AS users_location, users.signature AS users_signature, users.avatar AS users_avatar, users.notes AS users_notes, users.last_failed_login AS users_last_failed_login, users.login_attempts AS users_login_attempts, users.activated AS users_activated, users.theme AS users_theme, users.language AS users_language, users.post_count AS users_post_count, users.primary_group_id AS users_primary_group_id 
+FROM users) AS anon_1</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/venv/local/lib/python2.7/site-packages/sqlalchemy/log.py:109">&lt;sqlalchemy/log.py&gt;:109</td>
+        </tr>
+      
+        <tr class="flDebugEven">
+          <td>INFO</td>
+          <td>2016-11-23 21:48:26.747550</td>
+          <td>()</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/venv/local/lib/python2.7/site-packages/sqlalchemy/log.py:109">&lt;sqlalchemy/log.py&gt;:109</td>
+        </tr>
+      
+        <tr class="flDebugOdd">
+          <td>DEBUG</td>
+          <td>2016-11-23 21:48:26.748196</td>
+          <td>Total Time: 0.000916</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/flaskbb/app.py:328">./app.py:328</td>
+        </tr>
+      
+        <tr class="flDebugEven">
+          <td>INFO</td>
+          <td>2016-11-23 21:48:26.755115</td>
+          <td>SELECT count(*) AS count_1 
+FROM (SELECT topics.id AS topics_id, topics.forum_id AS topics_forum_id, topics.title AS topics_title, topics.user_id AS topics_user_id, topics.username AS topics_username, topics.date_created AS topics_date_created, topics.last_updated AS topics_last_updated, topics.locked AS topics_locked, topics.important AS topics_important, topics.views AS topics_views, topics.post_count AS topics_post_count, topics.first_post_id AS topics_first_post_id, topics.last_post_id AS topics_last_post_id 
+FROM topics) AS anon_1</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/venv/local/lib/python2.7/site-packages/sqlalchemy/log.py:109">&lt;sqlalchemy/log.py&gt;:109</td>
+        </tr>
+      
+        <tr class="flDebugOdd">
+          <td>INFO</td>
+          <td>2016-11-23 21:48:26.755333</td>
+          <td>()</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/venv/local/lib/python2.7/site-packages/sqlalchemy/log.py:109">&lt;sqlalchemy/log.py&gt;:109</td>
+        </tr>
+      
+        <tr class="flDebugEven">
+          <td>DEBUG</td>
+          <td>2016-11-23 21:48:26.755800</td>
+          <td>Total Time: 0.000698</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/flaskbb/app.py:328">./app.py:328</td>
+        </tr>
+      
+        <tr class="flDebugOdd">
+          <td>INFO</td>
+          <td>2016-11-23 21:48:26.760672</td>
+          <td>SELECT count(*) AS count_1 
+FROM (SELECT posts.id AS posts_id, posts.topic_id AS posts_topic_id, posts.user_id AS posts_user_id, posts.username AS posts_username, posts.content AS posts_content, posts.date_created AS posts_date_created, posts.date_modified AS posts_date_modified, posts.modified_by AS posts_modified_by 
+FROM posts) AS anon_1</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/venv/local/lib/python2.7/site-packages/sqlalchemy/log.py:109">&lt;sqlalchemy/log.py&gt;:109</td>
+        </tr>
+      
+        <tr class="flDebugEven">
+          <td>INFO</td>
+          <td>2016-11-23 21:48:26.760882</td>
+          <td>()</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/venv/local/lib/python2.7/site-packages/sqlalchemy/log.py:109">&lt;sqlalchemy/log.py&gt;:109</td>
+        </tr>
+      
+        <tr class="flDebugOdd">
+          <td>DEBUG</td>
+          <td>2016-11-23 21:48:26.761343</td>
+          <td>Total Time: 0.000679</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/flaskbb/app.py:328">./app.py:328</td>
+        </tr>
+      
+        <tr class="flDebugEven">
+          <td>INFO</td>
+          <td>2016-11-23 21:48:26.771470</td>
+          <td>SELECT users.password AS users_password, users.id AS users_id, users.username AS users_username, users.email AS users_email, users.date_joined AS users_date_joined, users.lastseen AS users_lastseen, users.birthday AS users_birthday, users.gender AS users_gender, users.website AS users_website, users.location AS users_location, users.signature AS users_signature, users.avatar AS users_avatar, users.notes AS users_notes, users.last_failed_login AS users_last_failed_login, users.login_attempts AS users_login_attempts, users.activated AS users_activated, users.theme AS users_theme, users.language AS users_language, users.post_count AS users_post_count, users.primary_group_id AS users_primary_group_id, groups_1.id AS groups_1_id, groups_1.name AS groups_1_name, groups_1.description AS groups_1_description, groups_1.admin AS groups_1_admin, groups_1.super_mod AS groups_1_super_mod, groups_1.mod AS groups_1_mod, groups_1.guest AS groups_1_guest, groups_1.banned AS groups_1_banned, groups_1.mod_edituser AS groups_1_mod_edituser, groups_1.mod_banuser AS groups_1_mod_banuser, groups_1.editpost AS groups_1_editpost, groups_1.deletepost AS groups_1_deletepost, groups_1.deletetopic AS groups_1_deletetopic, groups_1.posttopic AS groups_1_posttopic, groups_1.postreply AS groups_1_postreply 
+FROM users LEFT OUTER JOIN groups AS groups_1 ON groups_1.id = users.primary_group_id ORDER BY users.id DESC
+ LIMIT ? OFFSET ?</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/venv/local/lib/python2.7/site-packages/sqlalchemy/log.py:109">&lt;sqlalchemy/log.py&gt;:109</td>
+        </tr>
+      
+        <tr class="flDebugOdd">
+          <td>INFO</td>
+          <td>2016-11-23 21:48:26.771722</td>
+          <td>(1, 0)</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/venv/local/lib/python2.7/site-packages/sqlalchemy/log.py:109">&lt;sqlalchemy/log.py&gt;:109</td>
+        </tr>
+      
+        <tr class="flDebugEven">
+          <td>DEBUG</td>
+          <td>2016-11-23 21:48:26.772503</td>
+          <td>Total Time: 0.001045</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/flaskbb/app.py:328">./app.py:328</td>
+        </tr>
+      
+        <tr class="flDebugOdd">
+          <td>INFO</td>
+          <td>2016-11-23 21:48:26.780756</td>
+          <td>SELECT count(*) AS count_1 
+FROM (SELECT users.password AS users_password, users.id AS users_id, users.username AS users_username, users.email AS users_email, users.date_joined AS users_date_joined, users.lastseen AS users_lastseen, users.birthday AS users_birthday, users.gender AS users_gender, users.website AS users_website, users.location AS users_location, users.signature AS users_signature, users.avatar AS users_avatar, users.notes AS users_notes, users.last_failed_login AS users_last_failed_login, users.login_attempts AS users_login_attempts, users.activated AS users_activated, users.theme AS users_theme, users.language AS users_language, users.post_count AS users_post_count, users.primary_group_id AS users_primary_group_id 
+FROM users 
+WHERE users.lastseen &gt;= ?) AS anon_1</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/venv/local/lib/python2.7/site-packages/sqlalchemy/log.py:109">&lt;sqlalchemy/log.py&gt;:109</td>
+        </tr>
+      
+        <tr class="flDebugEven">
+          <td>INFO</td>
+          <td>2016-11-23 21:48:26.780973</td>
+          <td>(&#39;2016-11-23 21:33:26.774451&#39;,)</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/venv/local/lib/python2.7/site-packages/sqlalchemy/log.py:109">&lt;sqlalchemy/log.py&gt;:109</td>
+        </tr>
+      
+        <tr class="flDebugOdd">
+          <td>DEBUG</td>
+          <td>2016-11-23 21:48:26.781513</td>
+          <td>Total Time: 0.000766</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/flaskbb/app.py:328">./app.py:328</td>
+        </tr>
+      
+        <tr class="flDebugEven">
+          <td>INFO</td>
+          <td>2016-11-23 21:48:27.143713</td>
+          <td>SELECT users.password AS users_password, users.id AS users_id, users.username AS users_username, users.email AS users_email, users.date_joined AS users_date_joined, users.lastseen AS users_lastseen, users.birthday AS users_birthday, users.gender AS users_gender, users.website AS users_website, users.location AS users_location, users.signature AS users_signature, users.avatar AS users_avatar, users.notes AS users_notes, users.last_failed_login AS users_last_failed_login, users.login_attempts AS users_login_attempts, users.activated AS users_activated, users.theme AS users_theme, users.language AS users_language, users.post_count AS users_post_count, users.primary_group_id AS users_primary_group_id, groups_1.id AS groups_1_id, groups_1.name AS groups_1_name, groups_1.description AS groups_1_description, groups_1.admin AS groups_1_admin, groups_1.super_mod AS groups_1_super_mod, groups_1.mod AS groups_1_mod, groups_1.guest AS groups_1_guest, groups_1.banned AS groups_1_banned, groups_1.mod_edituser AS groups_1_mod_edituser, groups_1.mod_banuser AS groups_1_mod_banuser, groups_1.editpost AS groups_1_editpost, groups_1.deletepost AS groups_1_deletepost, groups_1.deletetopic AS groups_1_deletetopic, groups_1.posttopic AS groups_1_posttopic, groups_1.postreply AS groups_1_postreply 
+FROM users LEFT OUTER JOIN groups AS groups_1 ON groups_1.id = users.primary_group_id 
+WHERE users.id = ?</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/venv/local/lib/python2.7/site-packages/sqlalchemy/log.py:109">&lt;sqlalchemy/log.py&gt;:109</td>
+        </tr>
+      
+        <tr class="flDebugOdd">
+          <td>INFO</td>
+          <td>2016-11-23 21:48:27.144859</td>
+          <td>(1,)</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/venv/local/lib/python2.7/site-packages/sqlalchemy/log.py:109">&lt;sqlalchemy/log.py&gt;:109</td>
+        </tr>
+      
+        <tr class="flDebugEven">
+          <td>DEBUG</td>
+          <td>2016-11-23 21:48:27.147290</td>
+          <td>Total Time: 0.003578</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/flaskbb/app.py:328">./app.py:328</td>
+        </tr>
+      
+        <tr class="flDebugOdd">
+          <td>INFO</td>
+          <td>2016-11-23 21:48:27.151351</td>
+          <td>SELECT posts.id AS posts_id, posts.topic_id AS posts_topic_id, posts.user_id AS posts_user_id, posts.username AS posts_username, posts.content AS posts_content, posts.date_created AS posts_date_created, posts.date_modified AS posts_date_modified, posts.modified_by AS posts_modified_by 
+FROM posts 
+WHERE posts.id = ?</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/venv/local/lib/python2.7/site-packages/sqlalchemy/log.py:109">&lt;sqlalchemy/log.py&gt;:109</td>
+        </tr>
+      
+        <tr class="flDebugEven">
+          <td>INFO</td>
+          <td>2016-11-23 21:48:27.151729</td>
+          <td>(2,)</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/venv/local/lib/python2.7/site-packages/sqlalchemy/log.py:109">&lt;sqlalchemy/log.py&gt;:109</td>
+        </tr>
+      
+        <tr class="flDebugOdd">
+          <td>DEBUG</td>
+          <td>2016-11-23 21:48:27.152986</td>
+          <td>Total Time: 0.001632</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/flaskbb/app.py:328">./app.py:328</td>
+        </tr>
+      
+        <tr class="flDebugEven">
+          <td>INFO</td>
+          <td>2016-11-23 21:48:27.157423</td>
+          <td>SELECT posts.id AS posts_id, posts.topic_id AS posts_topic_id, posts.user_id AS posts_user_id, posts.username AS posts_username, posts.content AS posts_content, posts.date_created AS posts_date_created, posts.date_modified AS posts_date_modified, posts.modified_by AS posts_modified_by 
+FROM posts 
+WHERE posts.id = ?</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/venv/local/lib/python2.7/site-packages/sqlalchemy/log.py:109">&lt;sqlalchemy/log.py&gt;:109</td>
+        </tr>
+      
+        <tr class="flDebugOdd">
+          <td>INFO</td>
+          <td>2016-11-23 21:48:27.157693</td>
+          <td>(1,)</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/venv/local/lib/python2.7/site-packages/sqlalchemy/log.py:109">&lt;sqlalchemy/log.py&gt;:109</td>
+        </tr>
+      
+        <tr class="flDebugEven">
+          <td>DEBUG</td>
+          <td>2016-11-23 21:48:27.158478</td>
+          <td>Total Time: 0.001065</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/flaskbb/app.py:328">./app.py:328</td>
+        </tr>
+      
+        <tr class="flDebugOdd">
+          <td>INFO</td>
+          <td>2016-11-23 21:48:27.161230</td>
+          <td>SELECT topics.id AS topics_id, topics.forum_id AS topics_forum_id, topics.title AS topics_title, topics.user_id AS topics_user_id, topics.username AS topics_username, topics.date_created AS topics_date_created, topics.last_updated AS topics_last_updated, topics.locked AS topics_locked, topics.important AS topics_important, topics.views AS topics_views, topics.post_count AS topics_post_count, topics.first_post_id AS topics_first_post_id, topics.last_post_id AS topics_last_post_id 
+FROM topics 
+WHERE topics.forum_id IN (?, ?, ?) ORDER BY topics.last_updated DESC
+ LIMIT ? OFFSET ?</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/venv/local/lib/python2.7/site-packages/sqlalchemy/log.py:109">&lt;sqlalchemy/log.py&gt;:109</td>
+        </tr>
+      
+        <tr class="flDebugEven">
+          <td>INFO</td>
+          <td>2016-11-23 21:48:27.161672</td>
+          <td>(1, 2, 3, 10, 0)</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/venv/local/lib/python2.7/site-packages/sqlalchemy/log.py:109">&lt;sqlalchemy/log.py&gt;:109</td>
+        </tr>
+      
+        <tr class="flDebugOdd">
+          <td>DEBUG</td>
+          <td>2016-11-23 21:48:27.163878</td>
+          <td>Total Time: 0.002647</td>
+          <td title="/media/declan/1418DB8F18DB6DEC/flaskprojects/flaskbb/flaskbb/app.py:328">./app.py:328</td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+
+        </div>
+      </div>
+    </div>
+    
+  
+    
+    <div id="flDebugRouteListPanel-content" class="panelContent">
+      <div class="flDebugPanelTitle">
+        <a href="" class="flDebugClose">Close</a>
+        <h3>Route List</h3>
+      </div>
+      <div class="flDebugPanelContent">
+        <div class="scroll">
+          <table>
+  <thead>
+    <tr>
+      <th>URL route</th>
+      <th>Endpoint name</th>
+      <th>HTTP methods</th>
+      <th>Is alias</th>
+      <th>Redirect to</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      
+        <tr>
+          <td>/</td>
+          <td>forum.index</td>
+          <td>GET, HEAD, OPTIONS</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/&lt;int:forum_id&gt;-&lt;slug&gt;/markread</td>
+          <td>forum.markread</td>
+          <td>OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/&lt;int:forum_id&gt;-&lt;slug&gt;/topic/new</td>
+          <td>forum.new_topic</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/&lt;int:forum_id&gt;/markread</td>
+          <td>forum.markread</td>
+          <td>OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/&lt;int:forum_id&gt;/topic/new</td>
+          <td>forum.new_topic</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/_debug_toolbar/static/&lt;path:filename&gt;</td>
+          <td>_debug_toolbar.static</td>
+          <td>GET, HEAD, OPTIONS</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/_debug_toolbar/views/sqlalchemy/sql_explain</td>
+          <td>debugtoolbar.sql_select</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/_debug_toolbar/views/sqlalchemy/sql_select</td>
+          <td>debugtoolbar.sql_select</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/_debug_toolbar/views/template/&lt;key&gt;</td>
+          <td>debugtoolbar.template_editor</td>
+          <td>GET, HEAD, OPTIONS</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/_debug_toolbar/views/template/&lt;key&gt;</td>
+          <td>debugtoolbar.template_preview</td>
+          <td>OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/_debug_toolbar/views/template/&lt;key&gt;/save</td>
+          <td>debugtoolbar.save_template</td>
+          <td>OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/_themes/&lt;themeid&gt;/&lt;path:filename&gt;</td>
+          <td>_themes.static</td>
+          <td>GET, HEAD, OPTIONS</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/admin/</td>
+          <td>management.overview</td>
+          <td>GET, HEAD, OPTIONS</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/admin/category/&lt;int:category_id&gt;/delete</td>
+          <td>management.delete_category</td>
+          <td>OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/admin/category/&lt;int:category_id&gt;/edit</td>
+          <td>management.edit_category</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/admin/category/add</td>
+          <td>management.add_category</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/admin/forums</td>
+          <td>management.forums</td>
+          <td>GET, HEAD, OPTIONS</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/admin/forums/&lt;int:category_id&gt;/add</td>
+          <td>management.add_forum</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/admin/forums/&lt;int:forum_id&gt;/delete</td>
+          <td>management.delete_forum</td>
+          <td>OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/admin/forums/&lt;int:forum_id&gt;/edit</td>
+          <td>management.edit_forum</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/admin/forums/add</td>
+          <td>management.add_forum</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/admin/groups</td>
+          <td>management.groups</td>
+          <td>GET, HEAD, OPTIONS</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/admin/groups/&lt;int:group_id&gt;/delete</td>
+          <td>management.delete_group</td>
+          <td>OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/admin/groups/&lt;int:group_id&gt;/edit</td>
+          <td>management.edit_group</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/admin/groups/add</td>
+          <td>management.add_group</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/admin/groups/delete</td>
+          <td>management.delete_group</td>
+          <td>OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/admin/plugins</td>
+          <td>management.plugins</td>
+          <td>GET, HEAD, OPTIONS</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/admin/plugins/&lt;path:plugin&gt;/disable</td>
+          <td>management.disable_plugin</td>
+          <td>OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/admin/plugins/&lt;path:plugin&gt;/enable</td>
+          <td>management.enable_plugin</td>
+          <td>OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/admin/plugins/&lt;path:plugin&gt;/install</td>
+          <td>management.install_plugin</td>
+          <td>OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/admin/plugins/&lt;path:plugin&gt;/uninstall</td>
+          <td>management.uninstall_plugin</td>
+          <td>OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/admin/reports</td>
+          <td>management.reports</td>
+          <td>GET, HEAD, OPTIONS</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/admin/reports/&lt;int:report_id&gt;/markread</td>
+          <td>management.report_markread</td>
+          <td>OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/admin/reports/markread</td>
+          <td>management.report_markread</td>
+          <td>OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/admin/reports/unread</td>
+          <td>management.unread_reports</td>
+          <td>GET, HEAD, OPTIONS</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/admin/settings</td>
+          <td>management.settings</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/admin/settings/&lt;path:slug&gt;</td>
+          <td>management.settings</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/admin/users</td>
+          <td>management.users</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/admin/users/&lt;int:user_id&gt;/ban</td>
+          <td>management.ban_user</td>
+          <td>OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/admin/users/&lt;int:user_id&gt;/delete</td>
+          <td>management.delete_user</td>
+          <td>OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/admin/users/&lt;int:user_id&gt;/edit</td>
+          <td>management.edit_user</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/admin/users/&lt;int:user_id&gt;/unban</td>
+          <td>management.unban_user</td>
+          <td>OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/admin/users/add</td>
+          <td>management.add_user</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/admin/users/ban</td>
+          <td>management.ban_user</td>
+          <td>OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/admin/users/banned</td>
+          <td>management.banned_users</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/admin/users/delete</td>
+          <td>management.delete_user</td>
+          <td>OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/admin/users/unban</td>
+          <td>management.unban_user</td>
+          <td>OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/auth/activate</td>
+          <td>auth.request_activation_token</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/auth/activate/&lt;token&gt;</td>
+          <td>auth.activate_account</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/auth/login</td>
+          <td>auth.login</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/auth/logout</td>
+          <td>auth.logout</td>
+          <td>GET, HEAD, OPTIONS</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/auth/reauth</td>
+          <td>auth.reauth</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/auth/register</td>
+          <td>auth.register</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/auth/reset-password</td>
+          <td>auth.forgot_password</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/auth/reset-password/&lt;token&gt;</td>
+          <td>auth.reset_password</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/category/&lt;int:category_id&gt;</td>
+          <td>forum.view_category</td>
+          <td>GET, HEAD, OPTIONS</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/category/&lt;int:category_id&gt;-&lt;slug&gt;</td>
+          <td>forum.view_category</td>
+          <td>GET, HEAD, OPTIONS</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/forum/&lt;int:forum_id&gt;</td>
+          <td>forum.view_forum</td>
+          <td>GET, HEAD, OPTIONS</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/forum/&lt;int:forum_id&gt;-&lt;slug&gt;</td>
+          <td>forum.view_forum</td>
+          <td>GET, HEAD, OPTIONS</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/forum/&lt;int:forum_id&gt;-&lt;slug&gt;/edit</td>
+          <td>forum.manage_forum</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/forum/&lt;int:forum_id&gt;/edit</td>
+          <td>forum.manage_forum</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/memberlist</td>
+          <td>forum.memberlist</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/message/</td>
+          <td>message.inbox</td>
+          <td>GET, HEAD, OPTIONS</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/message/&lt;int:conversation_id&gt;/delete</td>
+          <td>message.delete_conversation</td>
+          <td>OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/message/&lt;int:conversation_id&gt;/edit</td>
+          <td>message.edit_conversation</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/message/&lt;int:conversation_id&gt;/move</td>
+          <td>message.move_conversation</td>
+          <td>OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/message/&lt;int:conversation_id&gt;/restore</td>
+          <td>message.restore_conversation</td>
+          <td>OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/message/&lt;int:conversation_id&gt;/view</td>
+          <td>message.view_conversation</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/message/draft</td>
+          <td>message.drafts</td>
+          <td>GET, HEAD, OPTIONS</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/message/inbox</td>
+          <td>message.inbox</td>
+          <td>GET, HEAD, OPTIONS</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/message/message/&lt;int:message_id&gt;/raw</td>
+          <td>message.raw_message</td>
+          <td>GET, HEAD, OPTIONS</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/message/new</td>
+          <td>message.new_conversation</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/message/sent</td>
+          <td>message.sent</td>
+          <td>GET, HEAD, OPTIONS</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/message/trash</td>
+          <td>message.trash</td>
+          <td>GET, HEAD, OPTIONS</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/portal/</td>
+          <td>portal.index</td>
+          <td>GET, HEAD, OPTIONS</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/post/&lt;int:post_id&gt;</td>
+          <td>forum.view_post</td>
+          <td>GET, HEAD, OPTIONS</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/post/&lt;int:post_id&gt;/delete</td>
+          <td>forum.delete_post</td>
+          <td>OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/post/&lt;int:post_id&gt;/edit</td>
+          <td>forum.edit_post</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/post/&lt;int:post_id&gt;/raw</td>
+          <td>forum.raw_post</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/post/&lt;int:post_id&gt;/report</td>
+          <td>forum.report_post</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/search</td>
+          <td>forum.search</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/static/&lt;path:filename&gt;</td>
+          <td>static</td>
+          <td>GET, HEAD, OPTIONS</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/topic/&lt;int:topic_id&gt;</td>
+          <td>forum.view_topic</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/topic/&lt;int:topic_id&gt;-&lt;slug&gt;</td>
+          <td>forum.view_topic</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/topic/&lt;int:topic_id&gt;-&lt;slug&gt;/delete</td>
+          <td>forum.delete_topic</td>
+          <td>OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/topic/&lt;int:topic_id&gt;-&lt;slug&gt;/highlight</td>
+          <td>forum.highlight_topic</td>
+          <td>OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/topic/&lt;int:topic_id&gt;-&lt;slug&gt;/lock</td>
+          <td>forum.lock_topic</td>
+          <td>OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/topic/&lt;int:topic_id&gt;-&lt;slug&gt;/post/new</td>
+          <td>forum.new_post</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/topic/&lt;int:topic_id&gt;-&lt;slug&gt;/trivialize</td>
+          <td>forum.trivialize_topic</td>
+          <td>OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/topic/&lt;int:topic_id&gt;-&lt;slug&gt;/unlock</td>
+          <td>forum.unlock_topic</td>
+          <td>OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/topic/&lt;int:topic_id&gt;/delete</td>
+          <td>forum.delete_topic</td>
+          <td>OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/topic/&lt;int:topic_id&gt;/highlight</td>
+          <td>forum.highlight_topic</td>
+          <td>OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/topic/&lt;int:topic_id&gt;/lock</td>
+          <td>forum.lock_topic</td>
+          <td>OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/topic/&lt;int:topic_id&gt;/post/&lt;int:post_id&gt;/reply</td>
+          <td>forum.reply_post</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/topic/&lt;int:topic_id&gt;/post/new</td>
+          <td>forum.new_post</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/topic/&lt;int:topic_id&gt;/trivialize</td>
+          <td>forum.trivialize_topic</td>
+          <td>OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/topic/&lt;int:topic_id&gt;/unlock</td>
+          <td>forum.unlock_topic</td>
+          <td>OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/topictracker</td>
+          <td>forum.topictracker</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/topictracker/&lt;int:topic_id&gt;-&lt;slug&gt;/add</td>
+          <td>forum.track_topic</td>
+          <td>OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/topictracker/&lt;int:topic_id&gt;-&lt;slug&gt;/delete</td>
+          <td>forum.untrack_topic</td>
+          <td>OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/topictracker/&lt;int:topic_id&gt;/add</td>
+          <td>forum.track_topic</td>
+          <td>OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/topictracker/&lt;int:topic_id&gt;/delete</td>
+          <td>forum.untrack_topic</td>
+          <td>OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/user/&lt;username&gt;</td>
+          <td>user.profile</td>
+          <td>GET, HEAD, OPTIONS</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/user/&lt;username&gt;/posts</td>
+          <td>user.view_all_posts</td>
+          <td>GET, HEAD, OPTIONS</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/user/&lt;username&gt;/topics</td>
+          <td>user.view_all_topics</td>
+          <td>GET, HEAD, OPTIONS</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/user/settings/email</td>
+          <td>user.change_email</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/user/settings/general</td>
+          <td>user.settings</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/user/settings/password</td>
+          <td>user.change_password</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/user/settings/user-details</td>
+          <td>user.change_user_details</td>
+          <td>GET, HEAD, OPTIONS, POST</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+        <tr>
+          <td>/who-is-online</td>
+          <td>forum.who_is_online</td>
+          <td>GET, HEAD, OPTIONS</td>
+          <td>False</td>
+          <td>None</td>
+        </tr>
+      
+    
+  </tbody>
+</table>
+        </div>
+      </div>
+    </div>
+    
+  
+    
+    <div id="flDebugProfilerPanel-content" class="panelContent">
+      <div class="flDebugPanelTitle">
+        <a href="" class="flDebugClose">Close</a>
+        <h3>Profiler not active</h3>
+      </div>
+      <div class="flDebugPanelContent">
+        <div class="scroll">
+          The profiler is not activated, activate it to use it
+        </div>
+      </div>
+    </div>
+    
+  
+  <div id="flDebugWindow" class="panelContent"></div>
+</div></body>
+</html>

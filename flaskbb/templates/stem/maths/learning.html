@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block styles %}
+{{ super() }}
+{% include "_img_left.html" %}
+{% endblock %}
+
+{% block page_content %}
+<div id="learning-resources">
+    <h1>Maths Learning Resources</h1>
+    
+    <hr />
+    
+    <h2>Khan Academy</h2>
+    <img src="{{ url_for('static', filename='images/maths/khanLogo.jpg') }}" alt="khan academy logo" class="img-float-left" />
+    <p>
+        My favourite learning website for learning about mathematics is Khan Academy. It covers maths from early arithmetic to university level. The good news is that it is extremly kid-friendly ☺.
+    </p>
+    <p>
+        Another great thing is that it is free for everyone forever. Their motto is You Can Learn Anything, which I definitely believe in. ☺☺
+    </p>
+    <p>
+        <strong>So what is Khan Academy?</strong>
+        <br />
+        Well it is a online education website which was setup by this cool guy named Salman Khan (hence the name of Khan Academy).
+    </p>
+    <p>
+        He is a big hero of mine. Also he has some cool people working with him at Khan Academy like John Resig the inventor of jQuery (look at the tech glossary pages of my website to learn what jQuery is), and Pamela who teaches programming.
+    </p>
+    <p>
+        Initially Sal started making Youtube videos to help his cousins with their mathematics.
+    </p>
+    
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/MRyN5UUUtAo?rel=0" frameborder="0" allowfullscreen></iframe>
+    
+    <img src="{{ url_for('static', filename='images/khan/khan_home.png') }}" width="100%" />
+    <img src="{{ url_for('static', filename='images/khan/khan_subjects.png') }}" width="100%" />
+{% endblock %}

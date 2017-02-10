@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sidebar</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <style>
+        .submenu {
+            position: relative;
+            left: 10%;
+        }
+        
+        #nav {
+            position: fixed;
+            top: 40px;
+        }
+        
+        #toggle-nav {
+            position: fixed;
+            left: 1%;
+            z-index: 100;
+        }
+        
+        #content {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav id="nav" class="open">
+            <ul class="nav">
+                <li><a href="#">Introduction</a></li>
+                <li><a href="#" id="btn-1" data-toggle="collapse" data-target="#submenu1" aria-expanded="false">Scratch <span class="caret"></span></a>
+                    <ul class="nav collapse submenu" id="submenu1" role="menu" aria-labelledby="Scratch">
+                        <li><a href="clipboard1.html">Getting Started</a></li>
+                        <li><a href="buildAHouse.html">Learning Resources</a></li>
+                        <li><a href="clipboard2.html">Award Winning Project</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" id="btn-1" data-toggle="collapse" data-target="#submenu2" aria-expanded="false">Processing <span class="caret"></span></a>
+                    <ul class="nav collapse submenu" id="submenu2" role="menu" aria-labelledby="Processing">
+                        <li><a href="crazyPainter.html">Getting Started</a></li>
+                        <li><a href="#">Learning Resources</a></li>
+                        <li><a href="#">Khan Projects</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" id="btn-1" data-toggle="collapse" data-target="#submenu3" aria-expanded="false">Website Coding <span class="caret"></span></a>
+                    <ul class="nav collapse submenu" id="submenu3" role="menu" aria-labelledby="Website">
+                        <li><a href="#">Getting Started</a></li>
+                        <li><a href="#">Learning Resources</a></li>
+                        <li><a href="#">This Website</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" id="btn-1" data-toggle="collapse" data-target="#submenu4" aria-expanded="false">Python <span class="caret"></span></a>
+                    <ul class="nav collapse submenu" id="submenu4" role="menu" aria-labelledby="Python">
+                        <li><a href="#">Getting Started</a></li>
+                        <li><a href="#">Learning Resources</a></li>
+                        <li><a href="#">This Website</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" id="btn-1" data-toggle="collapse" data-target="#submenu5" aria-expanded="false">Raspberry Pi <span class="caret"></span></a>
+                    <ul class="nav collapse submenu" id="submenu5" role="menu" aria-labelledby="Raspberry Pi">
+                        <li><a href="#">Getting Started</a></li>
+                        <li><a href="#">Learning Resources</a></li>
+                        <li><a href="#">Python</a></li>
+                        <li><a href="#">Coding Websites</a></li>
+                        <li><a href="#">Hardware</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Famous People</a></li>
+                <li><a href="#">Events &amp; Competitions</a></li>
+            </ul>
+        </nav>
+        <button role="button" class="btn-sm btn-primary" id="toggle-nav">Toggle Sidebar</button>
+        <div class="col-md-10 col-md-offset-2" id="content">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nunc lorem, egestas at interdum et, pharetra eget mi. Fusce non dolor et sem volutpat placerat. Praesent ullamcorper arcu eget enim rutrum placerat. Nullam malesuada mi erat, sed feugiat ex faucibus eget. In ante arcu, vehicula ut fringilla at, condimentum eu arcu. Nullam sed congue justo, vitae semper neque. Donec vel tempor justo, in sodales lorem. Nullam egestas augue felis, vel ullamcorper quam rhoncus a. Vivamus dapibus turpis eget risus iaculis pretium. Phasellus eget nulla a arcu elementum mattis. Mauris aliquet elementum enim. Integer eget neque mollis, consectetur neque ac, bibendum justo. Nunc vitae pulvinar massa, eu luctus leo. Morbi ut suscipit ipsum.
+            </p>
+            Integer suscipit ipsum sed metus egestas luctus. In et mi porta, convallis turpis vitae, interdum dui. Nunc vulputate velit eu sagittis condimentum. Curabitur eget orci felis. Quisque dapibus feugiat feugiat. Nunc laoreet porttitor aliquam. Integer malesuada id nunc quis consectetur.
+            <p>
+                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras sodales odio tortor, ut sodales ante aliquet ut. Morbi interdum mattis tortor non rhoncus. Nulla nec enim sollicitudin, auctor ex non, iaculis risus. Phasellus iaculis est nec lorem vehicula mattis. Phasellus convallis ut libero non elementum. Proin id pharetra ante. Mauris ultrices dolor tortor, sit amet elementum dolor ultrices sed. Quisque sed mollis est. Suspendisse potenti. Maecenas et libero mi.
+            </p>
+            Morbi ullamcorper odio in risus aliquam, sit amet congue felis tristique. Sed interdum, lorem ut eleifend auctor, turpis quam malesuada risus, ut luctus orci tortor vitae nibh. Nunc tincidunt efficitur lectus eu tristique. Donec pretium luctus elit in pellentesque. Nulla ultrices facilisis tortor. Praesent tempus mi nec purus cursus ullamcorper. Pellentesque efficitur molestie urna et pulvinar. Nunc ac nunc quis erat porta tincidunt eget vel ante. Aliquam id ligula nisi. Vivamus luctus vehicula libero, ac blandit enim. Mauris ornare consequat quam, sit amet mattis eros porta sed. Etiam at lacus quis neque ultricies placerat ut quis ligula. Duis viverra libero et mi interdum, eget commodo nibh dapibus.
+            <p>
+                Sed in vulputate nisl, sit amet interdum ipsum. Etiam commodo purus vitae orci porttitor sagittis. Nam vehicula suscipit dui, in vestibulum tellus cursus et. Curabitur dolor sapien, elementum in scelerisque a, blandit vel nunc. Curabitur viverra eleifend dignissim. Duis mauris risus, auctor non semper vehicula, dignissim sit amet lectus. Sed a risus ullamcorper lorem ornare facilisis.
+            </p>
+            Donec at odio nisi. Proin elementum laoreet sem, pellentesque blandit est ultricies non. Nulla et ante volutpat, bibendum eros in, luctus massa. Fusce hendrerit varius augue non aliquam. Donec ac libero mauris. Pellentesque eget nunc iaculis, iaculis sapien non, faucibus ipsum. Nunc a faucibus ante. Sed eu leo convallis, consequat justo eu, porttitor neque. Donec convallis laoreet nisl, vel efficitur purus finibus pharetra. Mauris et ex vel felis porttitor bibendum convallis vel tellus. Donec molestie dolor sit amet ligula imperdiet fermentum. Maecenas vel turpis non elit euismod pretium. Donec ac imperdiet turpis, vel luctus urna. Aenean commodo vel lectus nec laoreet. In porttitor mauris risus, nec pharetra augue egestas sed. Vivamus sodales consequat hendrerit.
+            <p>
+                Suspendisse semper sodales pretium. Etiam felis lectus, pharetra rutrum tincidunt eget, posuere non turpis. Aenean lobortis euismod laoreet. Pellentesque ipsum dui, molestie et auctor finibus, tincidunt et nisi. Donec commodo vel ligula sit amet tincidunt. Fusce sit amet tortor vitae tortor pellentesque venenatis. In eget justo nulla. Suspendisse sit amet tellus vel arcu tempus pulvinar. Phasellus dolor dui, gravida fringilla tempor in, pharetra at enim. Morbi arcu nulla, porttitor ut purus eu, sodales consectetur metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin finibus arcu magna, et molestie mi hendrerit et. Maecenas sodales commodo ipsum, ac auctor neque euismod eget. In sapien magna, faucibus vitae nisi sit amet, tincidunt aliquet erat. Quisque mollis in risus auctor finibus.
+            </p>
+            Integer nulla dolor, dictum eget ultrices et, porttitor ut nibh. Sed nec neque et lacus pulvinar luctus in vel nunc. Aliquam bibendum nunc ut venenatis lobortis. Nullam ullamcorper ipsum a enim imperdiet tincidunt. Suspendisse aliquam elementum pretium. Integer elementum purus nec tellus facilisis, non eleifend orci rutrum. Ut et tempor nisi, sit amet elementum elit. Sed ut tincidunt lacus. Vestibulum eget massa vulputate, rutrum ipsum quis, consectetur nisl. Ut pharetra risus eget cursus pulvinar. Donec sed sagittis dui, vitae accumsan metus. Vivamus porttitor sagittis tortor ac aliquam. Sed euismod feugiat laoreet. Curabitur id tortor vitae elit dictum semper non id ligula.
+            <p>
+                Etiam tristique, erat nec lacinia feugiat, magna velit scelerisque purus, quis lacinia nulla tellus eu ipsum. Maecenas eu risus ante. Maecenas vehicula, nibh ac vehicula tincidunt, tellus dolor feugiat urna, sed rhoncus turpis metus in sem. Donec et bibendum augue, a tempor urna. Nam est quam, aliquet eu tempor at, bibendum a mi. Phasellus diam erat, iaculis pulvinar orci et, hendrerit eleifend massa. Nunc nisl odio, ultricies eget tellus vitae, hendrerit facilisis lorem. Curabitur gravida aliquet lorem. Suspendisse at orci molestie, condimentum ante ut, bibendum mauris. Sed vestibulum elit id odio sodales sagittis. Mauris tempus lobortis tortor, nec viverra ligula rutrum in. Vestibulum et suscipit felis, eu blandit leo. Nulla id egestas ipsum.
+            </p>
+            Pellentesque eu risus facilisis felis auctor accumsan. Sed ut viverra tortor. Mauris ac malesuada urna, id venenatis erat. Nam sed auctor eros, laoreet maximus dui. Quisque eu odio quis tellus vestibulum mattis ac at nunc. Donec ornare mi non ullamcorper bibendum. Morbi mauris urna, vehicula a est vitae, elementum tempor neque. Sed consequat nunc nisl, eu fringilla lacus accumsan sit amet. Praesent vulputate maximus tellus et semper. Phasellus bibendum leo eget nisl sodales laoreet. Aliquam maximus mi lacinia egestas mattis. In hac habitasse platea dictumst.
+            <p>
+                Nunc imperdiet, quam ut blandit tincidunt, sem nibh cursus augue, et cursus felis magna in metus. Pellentesque tellus quam, malesuada molestie neque ac, facilisis pellentesque justo. Quisque vitae enim lacus. Proin vitae sollicitudin libero, et sagittis quam. Pellentesque vel ipsum ac odio vestibulum varius. Duis varius lacus ut urna suscipit, a fringilla enim pellentesque. Aliquam erat volutpat. Vestibulum sed massa lectus. Phasellus in suscipit ipsum. Donec in pulvinar eros. Curabitur eu velit id tortor aliquam bibendum.
+            </p>
+        </div>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script>
+        $(function() {
+            $("#toggle-nav").on('click', function() {
+                var $toggleNav = $("#toggle-nav");
+                var $content = $("#content");
+                var $nav = $("#nav");
+
+                $nav.toggleClass("open");
+                if ($nav.hasClass("open")) {
+                    $nav
+                        .animate({
+                            left: "3%"
+                        }, 150);
+
+                    $content
+                        .removeClass("col-md-12")
+                        .addClass("col-md-10")
+                        .addClass("col-md-offset-2");
+                } else {
+                    $nav.animate({
+                        left: "-180px"
+                    }, 150);
+                    $content
+                        .removeClass("col-md-10")
+                        .removeClass("col-md-offset-2")
+                        .addClass("col-md-12")
+                        .delay(1500);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

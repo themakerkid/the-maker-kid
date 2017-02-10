@@ -1,0 +1,222 @@
+{% extends "base.html" %}
+
+{% block styles %}
+    {{ super() }}
+    <link href='http://fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+        #wrapper {
+            margin: 30px auto 0;
+            width: 900px;
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+        
+        #wrapper h1 {
+            font-family: 'Play', sans-serif;
+            margin: 0 0 20px;
+            text-align: center;
+            text-shadow: 3px 3px 4px grey;
+        }
+        
+        #wrapper p {
+            margin: 0 0 30px;
+            text-align: center;
+        }
+        
+        /*.container {
+            background: #fff;
+            box-shadow: 0 0 10px #ccc;
+            margin-bottom: 20px;
+            padding: 20px;
+            width: 900px;
+        }*/
+        
+        #tabs-container {
+            background: #000;
+            height: 400px;
+            width: 900px;
+        }
+        
+        #tabs-nav {
+            float: left;
+            width: 280px;
+        }
+        
+        #tabs-nav .logo {
+            float: left;
+        }
+        
+        #tabs-nav ul {
+            font-family: Garamond, Georgia;
+            font-size: 1em;
+            list-style: none;
+        }
+        
+        #tabs-nav ul li {
+            border-top: 1px solid #000;
+            float: left;
+        }
+        
+        #tabs-nav ul li a {
+            background: url({{ url_for('static', filename='images/nav-sprite.jpg') }}) no-repeat;
+            color: #999;
+            display: block;
+            height: 19px;
+            padding: 30px;
+            width: 220px;
+            text-decoration: none;
+            font-size: 1.25em;
+            text-shadow: 1px 1px 1px #000;
+            margin-bottom: 10px;
+            font-family: sans-serif;
+        }
+        
+        #tabs-nav ul li a:hover {
+            background-position: 0 -79px;
+            color: #fff;
+        }
+        
+        #tabs-nav ul li a.active {
+            background-position: 0 -158px;
+            color: #fff;
+        }
+        
+        #tabs-content {
+            background: url({{ url_for('static', filename='images/ajax-loader.gif') }}) 50% 50% no-repeat;
+            float: left;
+            height: 400px;
+            width: 620px;
+        }
+        
+        #tabs-content .profile {
+            display: none;
+            /* hide by default */
+            height: 400px;
+            position: relative;
+            width: 620px;
+        }
+        
+        #tabs-content .profile .caption {
+            background: url({{ url_for('static', filename='images/trans_black-50.png') }});
+            padding: 30px;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            width: 220px;
+        }
+        
+        #tabs-content .profile .caption h2, h4{
+            color: #fff;
+            font-family: Garamond, Georgia;
+            margin: 0 0 10px;
+        }
+        
+        #tabs-content .profile .caption p {
+            color: #ccc;
+            font-family: Arial;
+            font-size: 1.05em;
+            line-height: 1.5em;
+            margin: 0;
+            text-align: left;
+        }
+
+    </style>
+{% endblock %}
+
+{% block page_content %}
+    <div id="wrapper">
+        <h1>Famous Mathematicians</h1>
+
+        <div class="container">
+
+            <div id="tabs-container">
+
+                <div id="tabs-nav">
+                    <img src="{{ url_for('static', filename='images/maths/logo.jpg') }}" class="logo" />
+                    <ul>
+                        <li><a href="#" data-id="george-boole" class="active">George Boole</a></li>
+                        <li><a href="#" data-id="isaac-newton">Isaac Newton</a></li>
+                        <li><a href="#" data-id="ada-lovelace">Ada Lovelace</a></li>
+                        <li><a href="#" data-id="leonhard-euler">Leonhard Euler</a></li>
+                    </ul>
+                </div>
+                <!--/#tabs-nav-->
+
+                <div id="tabs-content">
+
+                    <div class="profile" id="george-boole" style="display:block;">
+                        <div class="caption">
+                            <h4>George Boole</h4>
+                            <p>George Boole was an English mathematician, educator, philosopher and logician. He worked in the fields of differential equations and algebraic logic, and is best known as the creator of Boolean algebra. In 1849 he was the first professor of mathematics at Queen's College, now UCC</p>
+                        </div>
+                        <!--/.caption-->
+                        <img src="{{ url_for('static', filename='images/maths/georgeBoole1.jpg') }}" />
+                    </div>
+ 
+
+                    <div class="profile" id="isaac-newton">
+                        <div class="caption">
+                            <h4>Isaac Newton</h4>
+                            <p>was an English physicist and mathematician who is widely recognised as one of the most influential scientists of all time and a key figure in the scientific revolution. He formulated the laws of motion and universal gravitation, which dominated scientists' view of the physical universe for the next three centuries.</p>
+                        </div>
+                        <!--/.caption-->
+                        <img src="{{ url_for('static', filename='images/maths/isaacNewton.jpg') }}" />
+                    </div>
+           
+
+                    <div class="profile" id="ada-lovelace">
+                        <div class="caption">
+                            <h4>Ada Lovelace</h4>
+                            <p>She was an English mathematician and writer, chiefly known for her work on Charles Babbage's early mechanical general-purpose computer, the Analytical Engine. She is often regarded as the first computer programmer, as she made the first algorithm intended to be carried out by a machine</p>
+                        </div>
+                        <!--/.caption-->
+                        <img src="{{ url_for('static', filename='images/maths/adaLovelace1.jpg') }}" />
+                    </div>
+        
+
+                    <div class="profile" id="leonhard-euler">
+                        <div class="caption">
+                            <h4>Leonhard Euler</h4>
+                            <p>was a Swiss mathematician, physicist, astronomer, logician and engineer who made important and influential discoveries in many branches of mathematics like infinitesimal calculus and graph theory. He is also known for his work in mechanics, fluid dynamics, optics, astronomy, and music theory. </p>
+                        </div>
+                        <!--/.caption-->
+                        <img src="{{ url_for('static', filename='images/maths/Leonhard_Euler1.jpg') }}" />
+                    </div>
+                    <!--/#tyrion-lannister-->
+
+                </div>
+                <!--/#tabs-content-->
+
+            </div>
+            <!--/#tabs-container-->
+
+        </div>
+        <!--/.container-->
+<!--        <p>Demo by <a href="http://alijafarian.com/">Ali Jafarian</a></p>-->
+    </div>
+    <!--/#wrapper-->
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // bind our function to the tabs
+            $('#tabs-nav ul li a').click(function(e) {
+                e.preventDefault();
+                // remove the active state from all links
+                $('#tabs-nav ul li a').removeClass("active");
+                // add the active state to the clicked link
+                $(this).addClass("active");
+                // fade out the current container
+                $('.profile').fadeOut(600, function() {
+                    // fade in the clicked container
+                    $('#' + profileID).fadeIn(600);
+                });
+                // define our current profile variable
+                var profileID = $(this).attr("data-id");
+            });
+        });
+
+    </script>
+{% endblock %}

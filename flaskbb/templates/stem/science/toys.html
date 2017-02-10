@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block styles %}
+{{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/image_mul_float.css') }}" />
+{% endblock %}
+
+{% block page_content %}
+    <h1>Science Toys</h1>
+
+    <hr />
+
+    <h2>Microscope</h2>
+    <p>
+        <img src="{{ url_for('static', filename='images/book_reviews/toys/microscopeNoPadding.jpg') }}" />
+        The one I got was &ldquo;My First Lab - Duo Scope&rdquo;....................................................................................................... ..........................................................
+    </p>
+
+    <h2>Leap Frog Human Body</h2>
+    <p>
+        <img src="{{ url_for('static', filename='images/book_reviews/toys/leapFrogHumanBody.jpg') }}" />
+        This is about a cat called Scratchy, a guy called Mitch and some cosmic defenders. You will learn to program in a simple language called Scratch and your projects will be part of the adventure.
+    </p>
+
+    <h2>Leap Frog Solar System</h2>
+    <p>
+        <img src="{{ url_for('static', filename='images/book_reviews/toys/leapFrogSolarSystem.jpg') }}" />
+        This is about a cat called Scratchy, a guy called Mitch and some cosmic defenders. You will learn to program in a simple language called Scratch and your projects will be part of the adventure.
+    </p>
+
+    <h2>Kids First Chemistry Set - Thames &amp; Kosmos</h2>
+    <p>
+        <img src="{{ url_for('static', filename='images/book_reviews/toys/chemistrySet.jpg') }}" />
+        <em>(More info here)</em>....................................................................................................... ..........................................................
+    </p>
+
+    <h2>Solar System - Brainstorm Toys</h2>
+    <p>
+        <img src="{{ url_for('static', filename='images/book_reviews/toys/solarSystemBrainstorm.jpg') }}" />
+        <em>(More info here)</em>....................................................................................................... ..........................................................
+    </p>
+{% endblock %}

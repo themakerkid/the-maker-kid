@@ -1,0 +1,197 @@
+{% extends "base.html" %}
+
+{% block styles %}
+    {{ super() }}
+    <style type="text/css">
+        .row {
+            border: 10px solid #d9d9d9;
+        }
+
+        #logo {
+            position: absolute;
+            top: -20px;
+            left: 0px;
+        }
+
+        h1 {
+            display: inline-block;
+            font-size: 1.75em;
+        }
+
+        .jumbotron {
+            position: relative;
+        }
+
+        p.lead h3 {
+            position: relative;
+            top: 40px;
+        }
+
+        * {
+           margin: 0;
+           padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 100%;
+            color: #666;
+        }
+
+        #wrapper {
+            margin: 20px auto;
+            width: 960px;
+        }
+        
+        .grid-block-container {
+            float: left;
+            width: 990px;
+            margin: 20px 0 0 -30px;
+        }
+        .grid-block {
+            position: relative;
+            float: left;
+            width: 200px;
+            height: 135px;
+            margin: 0 0 30px 30px;
+        }
+        .grid-block h4 {
+            font-size: .9em;
+            color: #333;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .caption {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: url(images/trans-black-50.png);
+            width: 100%;
+            height: 100%;
+        }
+        .caption h3, .caption p {
+            color: #fff;
+            margin: 20px;
+        }
+        .caption h3 {
+            margin: 20px 20px 10px;
+        }
+        .caption p {
+            font-size: .75em;
+            line-height: 1.5em;
+            margin: 0 20px 15px;
+        }
+        .caption a.learn-more {
+            padding: 5px 10px;
+            background: #08c;
+            color: #fff;
+            border-radius: 2px;
+            -moz-border-radius: 2px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .caption a.learn-more:hover {
+            background: #fff;
+            color: #08c;
+        }
+    </style>
+{% endblock %}
+
+{% block page_content %}
+    <div class="jumbotron">
+        <br />
+        <div id="logo">
+            <img src="{{ url_for('static', filename='images/logo_maybe2.jpg') }}" />
+            <h1>The MAKER Kid</h1>
+        </div>
+        <p class="lead">
+            <h3>Are you a kid who is Intsddddderested in STEM (Science, Technology, Engineering and Maths), but don't know where to get started?</h3>
+            <h3>Welcome to The MAKER Kid Website.</h3>
+            <h3>A place where STEM kids can talk about STEM, share ideas and projects, and learn together.</h3>
+        </p>
+        <br />
+    </div>
+    
+    <div id="wrapper">
+        <div class="grid-block-container">
+
+            <div class="grid-block fade">
+                <div class="caption">
+                    <h3>Science</h3>
+                    <p>Science is cool!! ^_^.</p>
+                    <p><a href="#" class="learn-more">Learn more</a></p>
+                </div>
+                <img src="{{ url_for('static', filename='images/Sci_def1.jpg') }}" />
+            </div>
+            <!--/.grid-block-->
+
+            <div class="grid-block fade">
+                <div class="caption">
+                    <h3>Technology</h3>
+                    <p>Technology is cool as well!! ^_^.</p>
+                    <p><a href="#" class="learn-more">Learn more</a></p>
+                </div>
+                <img src="{{ url_for('static', filename='images/Tech_def1.jpg') }}" width="200" height="135" />
+            </div>
+            <!--/.grid-block-->
+
+            <div class="grid-block fade">
+                <div class="caption">
+                    <h3>Engineering</h3>
+                    <p>Engineering means Robotics!! ^_^.</p>
+                    <p><a href="#" class="learn-more">Learn more</a></p>
+                </div>
+                <img src="{{ url_for('static', filename='images/Eng_def4.jpg') }}" height="135" />
+            </div>
+            <!--/.grid-block-->
+
+            <div class="grid-block fade">
+                <div class="caption">
+                    <h3>Maths</h3>
+                    <p>But maths is the skeleton!! ^_^.</p>
+                    <p><a href="#" class="learn-more">Learn more</a></p>
+                </div>
+                <img src="{{ url_for('static', filename='images/maths_def1.jpg') }}" height="135" />
+            </div>
+            <!--/.grid-block-->
+
+        </div>
+        <!--/.grid-container-->
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script>
+        $(document).ready(function() {
+            $('.standard').hover(
+                function(){
+                    $(this).find('.caption').show();
+                },
+                function(){
+                    $(this).find('.caption').hide();
+                }
+            );
+            $('.fade').hover(
+                function(){
+                    $(this).find('.caption').fadeIn(250);
+                },
+                function(){
+                    $(this).find('.caption').fadeOut(250);
+                }
+            );
+            $('.slide').hover(
+                function(){
+                    $(this).find('.caption').slideDown(250);
+                },
+                function(){
+                    $(this).find('.caption').slideUp(250);
+                }
+            );
+        });
+    </script>
+{% endblock %}

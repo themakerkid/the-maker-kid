@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }} - My Flask Application</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/site.css" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap-submenu.min.css') }}" />
+    <style type="text/css">
+        #year-footer {
+            color: white;
+            background-color: black;
+            padding: 10px;
+            width: 15%;
+            height: 2%;
+        }
+        
+        #website {
+            color: lightblue;
+        }
+        
+        #tech,
+        #maths {
+            cursor: pointer;
+        }
+        
+        .dropdown-header {
+            cursor: not-allowed;
+        }
+        
+        body {
+            padding-top: 70px;
+        }
+        
+        #navbar-last-item {
+            margin-right: 0%;
+        }
+        
+        p {
+            font-size: 1.5em;
+        }
+    </style>
+    {% block styles %}{% endblock %}
+    <!--    <script src="/static/scripts/modernizr-2.6.2.js"></script>-->
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand">The MAKER Kid</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url_for('about') }}">About</a></li>
+                    <li><a href="{{ url_for('science') }}">Science</a></li>
+                    <li class="dropdown">
+                        <a tabindex="0" data-toggle="dropdown" data-submenu id="tech">Technology <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header">Technology Links:</li>
+                            <li class="divider"></li>
+                            <li><a tabindex="0">Introduction</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-submenu">
+                                <a tabindex="0">Scratch</a>
+                                <ul class="dropdown-menu">
+                                    <li><a tabindex="{{ url_for('scratch') }}">Getting Started</a></li>
+                                    <li><a tabindex="0">Learning Resources</a></li>
+                                    <li><a tabindex="0">Award Winning Project</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a tabindex="0">Processing</a>
+                                <ul class="dropdown-menu">
+                                    <li><a tabindex="0">Getting Started</a></li>
+                                    <li><a tabindex="0" href="{{ url_for('processingLearn') }}">Learning Resources</a></li>
+                                    <li><a tabindex="0" href="{{ url_for('drawing') }}">Khan Projects</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a tabindex="0">Website Coding</a>
+                                <ul class="dropdown-menu">
+                                    <li><a tabindex="0">Getting Started</a></li>
+                                    <li><a tabindex="0">Learning Resources</a></li>
+                                    <li><a tabindex="0">This Website</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a tabindex="0">Python</a>
+                                <ul class="dropdown-menu">
+                                    <li><a tabindex="0">Getting Started</a></li>
+                                    <li><a tabindex="0">Learning Resources</a></li>
+                                    <li><a tabindex="0">This Website</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a tabindex="0">Raspberry Pi</a>
+                                <ul class="dropdown-menu">
+                                    <li><a tabindex="0">Getting Started</a></li>
+                                    <li><a tabindex="0">Learning Resources</a></li>
+                                    <li><a tabindex="0">Python</a></li>
+                                    <li><a tabindex="0">Coding Websites</a></li>
+                                    <li><a tabindex="0">Hardware</a></li>
+                                </ul>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a tabindex="0">Famous People</a></li>
+                            <li><a tabindex="0">Events &amp; Competitions</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{{ url_for('engineering') }}">Engineering</a></li>
+                    <li class="dropdown">
+                        <a tabindex="0" data-toggle="dropdown" data-submenu id="maths">Maths <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header">Maths Links:</li>
+                            <li class="divider"></li>
+                            <li><a tabindex="0" href="{{ url_for('maths') }}">Introduction</a></li>
+                            <li><a tabindex="0">Learning Websites</a></li>
+                            <li><a tabindex="0">Maths Books</a></li>
+                            <li><a tabindex="0">Famous Mathematicians</a></li>
+                            <li><a tabindex="0">My Projects</a></li>
+                            <li><a tabindex="0">Mathematics Software</a></li>
+                            <li><a tabindex="0">Competitions</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-submenu">
+                                <a tabindex="0">Other</a>
+                                <ul class="dropdown-menu">
+                                    <li><a tabindex="0">IXL (Not free)</a></li>
+                                    <li><a tabindex="0">Destination Maths (For schools only)</a></li>
+                                    <li><a tabindex="0">(Cloghans Hills (school) + Laurens Links (person in their school))</a></li>
+                                    <li><a tabindex="0">Mangahigh (used in schools)</a></li>
+                                    <li><a tabindex="0">Look up other free learning resources.</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a tabindex="0">Login In</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="{{ url_for('contact') }}" id="navbar-last-item">Contact Me</a></li>
+                </ul>
+            </div>
+        </div>
+        <p id="noscript"><strong>Please enable Javascript to improve your experience.</strong></p>
+        <div class="container body-content">
+            {% block content %}{% endblock %}
+            <footer>
+                <p id="year-footer">&copy; {{ year }} - <span id="website">The MAKER Kid</span></p>
+            </footer>
+        </div>
+    </div>
+    <script src="/static/js/jquery-1.10.2.js"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap-submenu.min.js') }}"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('[data-submenu]').submenupicker();
+            $('#noscript').remove();
+        });
+    </script>
+    <!--    <script src="/static/js/respond.js"></script>-->
+    {% block scripts %}{% endblock %}
+</body>
+
+</html>

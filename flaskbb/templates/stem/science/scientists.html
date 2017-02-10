@@ -1,0 +1,217 @@
+{% extends "base.html" %}
+
+{% block styles %}
+    {{ super() }}
+    <link href='http://fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+        #wrapper {
+            margin: 30px auto 0;
+            width: 900px;
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+        
+        #wrapper h1 {
+            font-family: 'Play', sans-serif;
+            margin: 0 0 20px;
+            text-align: center;
+            text-shadow: 3px 3px 4px grey;
+        }
+        
+        #wrapper p {
+            margin: 0 0 30px;
+            text-align: center;
+        }
+        
+        /*.container {
+            background: #fff;
+            box-shadow: 0 0 10px #ccc;
+            margin-bottom: 20px;
+            padding: 20px;
+            width: 900px;
+        }*/
+        
+        #tabs-container {
+            background: #000;
+            height: 400px;
+            width: 900px;
+        }
+        
+        #tabs-nav {
+            float: left;
+            width: 280px;
+        }
+        
+        #tabs-nav .logo {
+            float: left;
+        }
+        
+        #tabs-nav ul {
+            font-family: Garamond, Georgia;
+            font-size: 1em;
+            list-style: none;
+        }
+        
+        #tabs-nav ul li {
+            border-top: 1px solid #000;
+            float: left;
+        }
+        
+        #tabs-nav ul li a {
+            background: url({{ url_for('static', filename='images/nav-sprite.jpg') }}) no-repeat;
+            color: #999;
+            display: block;
+            height: 19px;
+            padding: 30px;
+            width: 220px;
+            text-decoration: none;
+            font-size: 1.25em;
+            text-shadow: 1px 1px 1px #000;
+            margin-bottom: 10px;
+            font-family: sans-serif;
+        }
+        
+        #tabs-nav ul li a:hover {
+            background-position: 0 -79px;
+            color: #fff;
+        }
+        
+        #tabs-nav ul li a.active {
+            background-position: 0 -158px;
+            color: #fff;
+        }
+        
+        #tabs-content {
+            background: url({{ url_for('static', filename='images/ajax-loader.gif') }}) 50% 50% no-repeat;
+            float: left;
+            height: 400px;
+            width: 620px;
+        }
+        
+        #tabs-content .profile {
+            display: none;
+            /* hide by default */
+            height: 400px;
+            position: relative;
+            width: 620px;
+        }
+        
+        #tabs-content .profile .caption {
+            background: url({{ url_for('static', filename='images/trans_black-50.png') }});
+            padding: 30px;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            width: 220px;
+        }
+        
+        #tabs-content .profile .caption h2 {
+            color: #fff;
+            font-family: Garamond, Georgia;
+            margin: 0 0 10px;
+        }
+        
+        #tabs-content .profile .caption p {
+            color: #ccc;
+            font-family: Arial;
+            font-size: 1.05em;
+            line-height: 1.5em;
+            margin: 0;
+            text-align: left;
+        }
+
+    </style>
+{% endblock %}
+
+{% block page_content %}
+    <div id="wrapper">
+
+        <div id="tabs-container">
+
+            <div id="tabs-nav">
+                <img src="{{ url_for('static', filename='images/science/logo_scientists.jpg') }}" class="logo" />
+                <ul>
+                    <li><a href="#" data-id="albert-einstein" class="active">Albert Einstein</a></li>
+                    <li><a href="#" data-id="galileo">Galileo</a></li>
+                    <li><a href="#" data-id="marie-curie">Marie Curie</a></li>
+                    <li><a href="#" data-id="charles-darwin">Charles Darwin</a></li>
+                </ul>
+            </div>
+            <!--/#tabs-nav-->
+
+            <div id="tabs-content">
+
+                <div class="profile" id="albert-einstein" style="display:block;">
+                    <div class="caption">
+                        <h2>Albert Einstein</h2>
+                        <p><a href="https://www.youtube.com/watch?v=0RtUvPjmE5s">Einstein</a>, a theoritical Physicist is perhaps the most famous Scientist of all time. He came up with some of the most important discoveries in all of science. He produced one of the most famous equations ever E=mc² (Energy = Mass multiplied by the speed of light squared) </p>
+                    </div>
+                    <!--/.caption-->
+                    <img src="{{ url_for('static', filename='images/science/einstein.jpg') }}" />
+                </div>
+                <!--/#ned-stark-->
+
+                <div class="profile" id="galileo">
+                    <div class="caption">
+                        <h2>Galileo</h2>
+                        <p>Galileo Galilei was an Italian scientist who helped open the eyes of the world to a new way of thinking about the workings of our solar system and astronomy. He was a physicist, engineer, philosopher, and mathematician who played a major role in the scientific revolution of the 17th century. Wow pretty impressive!!</p>
+                    </div>
+                    <!--/.caption-->
+                    <img src="{{ url_for('static', filename='images/science/galileo.jpg') }}" />
+                </div>
+                <!--/#jaime-lannister-->
+
+                <div class="profile" id="marie-curie">
+                    <div class="caption">
+                        <h2>Marie Curie</h2>
+                        <p>Marie Curie was a Polish chemist and physicist famous for becomming the first person to to be awarded two <a href="https://en.wikipedia.org/wiki/Nobel_Prize"> Nobel Prizes.</a>  With her husband Pierre she discovered the elements Polonium and Radium.  She is famous for her pioneering work on Radioactivity. </p>
+                    </div>
+                    <!--/.caption-->
+                    <img src="{{ url_for('static', filename='images/science/mariecurie.jpg') }}" />
+                </div>
+                <!--/#rob-stark-->
+
+                <div class="profile" id="charles-darwin">
+                    <div class="caption">
+                        <h2>Darwin</h2>
+                        <p><a href="http://www.bbc.co.uk/timelines/zq8gcdm">Charles Darwin</a> was an English scientist, most well known for his theory of evolution. In 1831 Darwin set sail on the HMS Beagle, visiting 4 continents collecting plant and animal specimens. His 1859 book "The Origin of Species", detailed his research on natural selection, and is a famous in Biology.</p>
+                    </div>
+                    <!--/.caption-->
+                    <img src="{{ url_for('static', filename='images/science/charles_darwin.jpg') }}" />
+                </div>
+                <!--/#tyrion-lannister-->
+
+            </div>
+            <!--/#tabs-content-->
+
+        </div>
+        <!--/#tabs-container-->
+        
+<!--        <p>Demo by <a href="http://alijafarian.com/">Ali Jafarian</a></p>-->
+    </div>
+    <!--/#wrapper-->
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // bind our function to the tabs
+            $('#tabs-nav ul li a').click(function(e) {
+                e.preventDefault();
+                // remove the active state from all links
+                $('#tabs-nav ul li a').removeClass("active");
+                // add the active state to the clicked link
+                $(this).addClass("active");
+                // fade out the current container
+                $('.profile').fadeOut(600, function() {
+                    // fade in the clicked container
+                    $('#' + profileID).fadeIn(600);
+                });
+                // define our current profile variable
+                var profileID = $(this).attr("data-id");
+            });
+        });
+
+    </script>
+{% endblock %}

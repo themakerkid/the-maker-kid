@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" type="text/css" href="/static/css/slider.css" />
+    {% include "_h2_border.html" %}
+    <style type="text/css">
+        p {
+            font-size: 1.25em;
+        }
+    </style>
+{% endblock %}
+
+{% block page_content %}
+    <div class="page-header">
+        <h1>My Project Videos</h1>
+    </div>
+    <h2>Intro to my project</h2>
+    <p>This video shows you the intro to my scratch project. <strong>NO cheating on anything! No! No! No!</strong></p>
+    <video controls>
+        <source src="/static/videos/scratchIntro.mp4" />
+    </video>
+    
+    <h2>Wonders &amp; Landmarks</h2>
+    <p><em>(Add text about videos here)</em></p>
+    <video controls>
+        <source src="/static/videos/scratchWonder.mp4" />
+    </video>
+<!--
+    <h2>Oceans &amp; Seas</h2>
+    <p><em>(Add text about videos here)</em></p>
+    <video controls>
+        <source src="{{ url_for('static', filename='videos/scratchOcean.mp4') }}" />
+    </video>
+-->
+    <!--
+    <h2>Animals</h2>
+    <p><em>(Add text about videos here)</em></p>
+    <video controls>
+        <source src="{{ url_for('static', filename='videos/scratchAnimal.mp4') }}" />
+    </video>
+
+    <h2>Countries &amp; Flags</h2>
+    <p><em>(Add text about videos here)</em></p>
+    <video controls>
+        <source src="{{ url_for('static', filename='videos/scratchFlags.mp4') }}" />
+    </video>
+    -->
+    <br />
+    <a href="http://scratch.mit.edu/projects/49812240/" title="Flash must be activated." target="_blank">My project on the scratch website.</a>
+    <p><i id="scratch-project">(Note: Please be patient as this project is quite large.)</i></p>
+<!--    <iframe allowtransparency="true" width="485" height="402" src="//scratch.mit.edu/projects/embed/49812240/?autostart=false" frameborder="0" allowfullscreen></iframe>-->
+    
+    <br />
+
+    <a role="button" class="btn btn-primary" href="{{ url_for('stem.scratch') }}">Getting Started</a>
+    <a role="button" class="btn btn-primary" href="{{ url_for('stem.scratchLearn') }}">Learning Resources</a>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+    <script src="/static/js/slider.js"></script>
+{% endblock %}

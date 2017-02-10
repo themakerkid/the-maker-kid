@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/ajax.css') }}" />
+{% endblock %}
+
+{% block page_content %}
+<header>
+    <h1>THE MAKER BUS</h1>
+    <nav>
+        <a href="{{ url_for('stem.ajaxHome') }}">HOME</a>
+        <a href="{{ url_for('stem.ajaxRoute') }}">ROUTE</a>
+        <a href="{{ url_for('stem.ajaxToys') }}">TOYS</a>
+        <a href="{{ url_for('stem.ajaxIndex') }}" class="current">TIMETABLE</a>
+    </nav>
+</header>
+
+<section id="content">
+    <div id="container">
+        <h2>Roll up! Roll up! It's the maker bus...</h2>
+
+        <div class="third">
+            <div id="event">
+                <a id="ca" href="ca.html"><img src="img/map-ca.png" alt="San Francisco" />San Francisco, CA</a>
+                <a id="tx" href="tx.html"><img src="img/map-tx.png" alt="Austin, TX" />Austin, TX</a>
+                <a id="ny" href="ny.html"><img src="img/map-ny.png" alt="New York, NY" />New York, NY</a>
+            </div>
+        </div>
+        <div class="third">
+            <div id="sessions">
+                <p>Select an event from the left</p>
+            </div>
+        </div>
+        <div class="third">
+            <div id="details"></div>
+        </div>
+
+    </div>
+    <!-- #container -->
+</section>
+<!-- #content -->
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="{{ url_for('static', filename='js/js-load.js') }}"></script>
+{% endblock %}
